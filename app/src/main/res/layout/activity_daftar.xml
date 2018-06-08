@@ -8,9 +8,10 @@
     android:padding="16dp"
     tools:context=".DaftarActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/title"
@@ -26,7 +27,6 @@
             android:id="@+id/entry1"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:layout_below="@id/title"
             android:layout_margin="8dp"
             android:onClick="cerita1"
             app:cardCornerRadius="20dp">
@@ -45,7 +45,6 @@
             android:id="@+id/entry2"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:layout_below="@id/entry1"
             android:layout_margin="8dp"
             android:onClick="cerita2"
             app:cardCornerRadius="20dp">
@@ -64,7 +63,6 @@
             android:id="@+id/entry3"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:layout_below="@id/entry2"
             android:layout_margin="8dp"
             android:onClick="cerita3"
             app:cardCornerRadius="20dp">
@@ -84,7 +82,6 @@
             android:id="@+id/entry4"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:layout_below="@id/entry3"
             android:layout_margin="8dp"
             android:onClick="cerita4"
             app:cardCornerRadius="20dp">
@@ -104,8 +101,6 @@
             android:id="@+id/entry5"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@id/entry4"
             android:layout_margin="8dp"
             android:onClick="kontak"
             app:cardCornerRadius="20dp">
@@ -121,6 +116,6 @@
 
         </android.support.v7.widget.CardView>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </ScrollView>
