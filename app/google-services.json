@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "274409698886",
+    "firebase_url": "https://jagasehat-fd156.firebaseio.com",
+    "project_id": "jagasehat-fd156",
+    "storage_bucket": "jagasehat-fd156.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274409698886:android:411c0bd0c35def3b",
+        "android_client_info": {
+          "package_name": "com.example.islam.jagasehat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "274409698886-d0fkmmfl1hvgii4v39043s6g6dt707ng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.islam.jagasehat",
+            "certificate_hash": "da8d3ae391a0e921557a5f6b207c79a3c82bf28f"
+          }
+        },
+        {
+          "client_id": "274409698886-fnk0dnfqkhb2kesjq1ceg7gp7udphtf0.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "274409698886-fnk0dnfqkhb2kesjq1ceg7gp7udphtf0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFczJNnY7y687iKiCZBOEA2Go91u-Iwtg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "274409698886-fnk0dnfqkhb2kesjq1ceg7gp7udphtf0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

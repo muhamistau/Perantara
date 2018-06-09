@@ -30,4 +30,5 @@
     <string name="pengenalan_drajat2">Dokter Drajat merupakan dokter spesialis bedah onkologi Rumah Sakit Hsan Sadikin (RSHS) Bandung. Beliau juga pernah menjabat sebagai PP Perhimpunan Onkologi Indonesia Periode 2010-2014.</string>
     <string name="pengenalan_ahyani">dr. Ahyani Raksanagara, M.Kes</string>
     <string name="pengenalan_ahyani2">Dokter yang pernah terdiagnosis kanker payudara namun telah berhasil menjalani seluruh prodesur pengobatan sehingga mampu kembali beraktivitas secara normal. Saat ini Dokter Ahyani merupakan Kepala Dinas Kesehatan Kota Bandung</string>
+    <string name="umur_error">Umur harus diisi!</string>
 </resources>
