@@ -18,12 +18,15 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.w3c.dom.Text;
+
 public class FormActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
     TextInputLayout umurInputLayout;
+    TextInputLayout emailInputLayout;
     TextInputEditText umur;
-    EditText email;
+    TextInputEditText email;
     Spinner spinJK;
     Spinner spinPendidikan;
     Spinner spinPekerjaan;
@@ -36,6 +39,9 @@ public class FormActivity extends AppCompatActivity {
 
         umurInputLayout = (TextInputLayout) findViewById(R.id.umurTextInputlayout);
         umur = (TextInputEditText) findViewById(R.id.umurEditText);
+
+        emailInputLayout = (TextInputLayout) findViewById(R.id.emailTextInputlayout);
+        email = (TextInputEditText) findViewById(R.id.emailEditText);
 
         spinJK = (Spinner) findViewById(R.id.spinnerJK);
         ArrayAdapter<CharSequence> adapterJK = ArrayAdapter.createFromResource(this, R.array.jk_array, R.layout.spinner_item);
@@ -51,8 +57,6 @@ public class FormActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapterPekerjaan = ArrayAdapter.createFromResource(this, R.array.pekerjaan_array, R.layout.spinner_item);
         adapterPekerjaan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinPekerjaan.setAdapter(adapterPekerjaan);
-
-        email = (EditText) findViewById(R.id.emailEditText);
 
         kirim = (CardView) findViewById(R.id.cardkirim);
 
@@ -95,6 +99,7 @@ public class FormActivity extends AppCompatActivity {
             Intent intent = new Intent(FormActivity.this, DaftarActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+            finish();
         }
 
     }

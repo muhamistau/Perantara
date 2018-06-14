@@ -27,8 +27,10 @@
 
     <string name="pengenalan_eti">\tApa Kabar Ibu, saya Eti. Terima kasih Ibu bersedia untuk membaca pengantar perawatan kesehatan payudara. Dalam PERANTARA ini Ibu akan memperoleh beragam informasi tentang kesehatan payudara.</string>
     <string name="pengenalan_drajat">dr. Drajat R Suardi, Sp.B (K) Onk., FICS</string>
-    <string name="pengenalan_drajat2">Dokter Drajat merupakan dokter spesialis bedah onkologi Rumah Sakit Hsan Sadikin (RSHS) Bandung. Beliau juga pernah menjabat sebagai PP Perhimpunan Onkologi Indonesia Periode 2010-2014.</string>
+    <string name="pengenalan_drajat2">Dokter Drajat merupakan dokter spesialis bedah onkologi Rumah Sakit Hsan Sadikin (RSHS) Bandung. Beliau juga pernah menjabat sebagai PP Perhimpunan Onkologi Indonesia Periode 2010–2014.</string>
     <string name="pengenalan_ahyani">dr. Ahyani Raksanagara, M.Kes</string>
     <string name="pengenalan_ahyani2">Dokter yang pernah terdiagnosis kanker payudara namun telah berhasil menjalani seluruh prodesur pengobatan sehingga mampu kembali beraktivitas secara normal. Saat ini Dokter Ahyani merupakan Kepala Dinas Kesehatan Kota Bandung</string>
     <string name="umur_error">Umur harus diisi!</string>
+    <string name="bagian_1_selesai">Bagian\n1. Pengenalan Tokoh\nSelesai</string>
+
 </resources>

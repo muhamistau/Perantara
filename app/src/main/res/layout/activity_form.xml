@@ -78,38 +78,27 @@
 
                     </android.support.design.widget.TextInputLayout>
 
-                    <TextView
-                        android:id="@+id/pertanyaanEmail"
-                        android:layout_width="wrap_content"
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/emailTextInputlayout"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginTop="16dp"
-                        android:fontFamily="@font/ventura_edding"
-                        android:text="Apakah Email Anda?"
-                        android:textColor="@color/colorPrimary" />
+                        app:hintTextAppearance="@style/TextInput"
+                        android:textColorHint="@color/colorPrimary">
 
-                    <EditText
-                        android:id="@+id/emailEditText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/colorPrimary"
-                        android:fontFamily="@font/ventura_edding"
-                        android:hint="Email"
-                        android:inputType="textEmailAddress"
-                        android:textColor="@color/colorPrimary"
-                        android:textColorHint="#FFE2A7B6" />
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/emailEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:fontFamily="@font/ventura_edding"
+                            android:hint="Apakah Email Anda?"
+                            android:inputType="textEmailAddress"
+                            android:textColor="@color/colorPrimary"
+                            android:textColorHint="#FFE2A7B6" />
 
-                    <!--<EditText-->
-                    <!--android:id="@+id/umurEditText"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:backgroundTint="@color/colorPrimary"-->
-                    <!--android:fontFamily="@font/ventura_edding"-->
-                    <!--android:hint="Umur"-->
-                    <!--android:maxLength="2"-->
-                    <!--android:inputType="number"-->
-                    <!--android:textColor="@color/colorPrimary"-->
-                    <!--android:textColorHint="#FFE2A7B6" />-->
+                    </android.support.design.widget.TextInputLayout>
 
                     <TextView
                         android:id="@+id/pertanyaanJK"

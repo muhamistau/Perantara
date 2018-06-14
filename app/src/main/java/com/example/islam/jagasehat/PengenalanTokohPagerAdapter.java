@@ -7,10 +7,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class PengenalanTokohPagerAdapter extends FragmentPagerAdapter {
 
-    final int PAGE_COUNT = 3;
+    private final int PAGE_COUNT = 4;
     private Context context;
 
-    public PengenalanTokohPagerAdapter(FragmentManager fm, Context context) {
+    PengenalanTokohPagerAdapter(FragmentManager fm, Context context) {
 
         super(fm);
         this.context = context;
@@ -27,9 +27,13 @@ public class PengenalanTokohPagerAdapter extends FragmentPagerAdapter {
 
             return new PengenalanTokoh2Fragment();
 
-        } else {
+        } else if (position == 2) {
 
             return new PengenalanTokoh3Fragment();
+
+        } else {
+
+            return new CeritaSelesaiFragment();
 
         }
     }
