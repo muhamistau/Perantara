@@ -1,8 +1,8 @@
 package com.example.islam.jagasehat;
 
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
@@ -11,7 +11,6 @@ public class PengenalanTokohActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pengenalan_tokoh);
 
@@ -33,9 +32,15 @@ public class PengenalanTokohActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
         super.onBackPressed();
-        overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_down);
+        overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down);
 
     }
+
+//    public void finishChapter() {
+//        Intent resultIntent = new Intent();
+//        resultIntent.putExtra("finished", 1);
+//        setResult(Activity.RESULT_OK, resultIntent);
+//        finish();
+//    }
 }

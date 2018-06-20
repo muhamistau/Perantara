@@ -29,6 +29,9 @@
         <activity
             android:name=".PengenalanTokohActivity"
             android:theme="@style/NoActionTheme" />
+        <activity
+            android:name=".ContactActivity"
+            android:theme="@style/NoActionTheme" />
     </application>
 
 </manifest>

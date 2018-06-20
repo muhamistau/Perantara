@@ -3,4 +3,5 @@
     <color name="colorPrimary">#ED7C98</color>
     <color name="colorPrimaryDark">#C2185B</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="chapterIsDone">#64dd17</color>
 </resources>

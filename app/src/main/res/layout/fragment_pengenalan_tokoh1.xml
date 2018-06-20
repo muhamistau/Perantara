@@ -8,7 +8,6 @@
     android:padding="16dp"
     tools:context=".PengenalanTokoh1Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,6 +30,7 @@
                 android:textSize="24sp" />
 
             <ImageView
+                android:contentDescription="Eti"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cardtext"
