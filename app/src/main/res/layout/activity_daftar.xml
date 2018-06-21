@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/ventura_edding"
             android:gravity="center_horizontal"
-            android:text="~ Daftar Isi ~"
+            android:text="@string/daftar_isi_header"
             android:textColor="@android:color/white"
             android:textSize="48sp" />
 
@@ -28,6 +28,9 @@
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
             android:onClick="cerita1"
             app:cardCornerRadius="20dp">
 
@@ -36,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/ventura_edding"
-                android:text="1. Pengenalan Tokoh"
+                android:text="@string/chapter1_title"
                 android:textSize="24sp" />
 
         </android.support.v7.widget.CardView>
@@ -46,6 +49,9 @@
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
             android:onClick="cerita2"
             app:cardCornerRadius="20dp">
 
@@ -54,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/ventura_edding"
-                android:text="2. Ada apa dengan payudara saya?"
+                android:text="@string/chapter2_title"
                 android:textSize="24sp" />
 
         </android.support.v7.widget.CardView>
@@ -64,6 +70,9 @@
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
             android:onClick="cerita3"
             app:cardCornerRadius="20dp">
 
@@ -72,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/ventura_edding"
-                android:text="3. Mengapa Perlu Konsultasi Ke Dokter?"
+                android:text="@string/chapter3_title"
                 android:textAlignment="center"
                 android:textSize="24sp" />
 
@@ -83,6 +92,9 @@
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
             android:onClick="cerita4"
             app:cardCornerRadius="20dp">
 
@@ -91,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/ventura_edding"
-                android:text="4. Ibu Tidak Sendirian"
+                android:text="@string/chapter4_title"
                 android:textAlignment="center"
                 android:textSize="24sp" />
 
@@ -102,6 +114,9 @@
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_margin="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
             android:onClick="kontak"
             app:cardCornerRadius="20dp">
 
@@ -110,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/ventura_edding"
-                android:text="Kelompok yang peduli"
+                android:text="@string/kelompok_yang_peduli"
                 android:textAlignment="center"
                 android:textSize="24sp" />
 

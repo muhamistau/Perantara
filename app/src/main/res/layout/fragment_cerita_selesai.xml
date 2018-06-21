@@ -12,6 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="50dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:selectableItemBackground"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="24dp">
 
@@ -25,20 +28,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:fontFamily="@font/ventura_edding"
                 android:text="@string/bagian_1_selesai"
                 android:textAlignment="center"
-                android:textSize="32sp"
-                android:fontFamily="@font/ventura_edding"/>
+                android:textSize="32sp" />
 
             <ImageView
                 android:id="@+id/finishButton"
-                android:padding="16dp"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/textCenter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="Finish Chapter Button"
-                android:src="@mipmap/ic_launcher_round"/>
+                android:layout_below="@id/textCenter"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/desc_finish_chapter_button"
+                android:padding="16dp"
+                android:src="@mipmap/ic_launcher_round" />
 
         </RelativeLayout>
 

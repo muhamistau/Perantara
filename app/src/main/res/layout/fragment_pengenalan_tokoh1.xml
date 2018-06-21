@@ -24,18 +24,18 @@
                 android:id="@+id/cardtext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/ventura_edding"
+                android:fontFamily="@font/minou"
                 android:text="@string/pengenalan_eti"
                 android:textAlignment="center"
                 android:textSize="24sp" />
 
             <ImageView
-                android:contentDescription="Eti"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cardtext"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/pengenalan_eti" />
+                android:contentDescription="@string/desc_eti"
+                android:src="@drawable/perkenalan_eti" />
 
         </RelativeLayout>
 

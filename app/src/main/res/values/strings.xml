@@ -25,12 +25,40 @@
         <item>Lainnya</item>
     </string-array>
 
+    <string name="subtitle">Aplikasi Edukasi Kesehatan Masyarakat Jawa Barat</string>
+    <string name="hint_umur">Berapakah Umur anda?</string>
+    <string name="hint_email">Apakah Email Anda?</string>
+    <string name="hint_jk">Jenis Kelamin Anda?</string>
+    <string name="hint_pendidikan">Tingkat Pendidikan Anda?</string>
+    <string name="hint_pekerjaan">Apakah Pekerjaan Anda?</string>
     <string name="pengenalan_eti">\tApa Kabar Ibu, saya Eti. Terima kasih Ibu bersedia untuk membaca pengantar perawatan kesehatan payudara. Dalam PERANTARA ini Ibu akan memperoleh beragam informasi tentang kesehatan payudara.</string>
     <string name="pengenalan_drajat">dr. Drajat R Suardi, Sp.B (K) Onk., FICS</string>
-    <string name="pengenalan_drajat2">Dokter Drajat merupakan dokter spesialis bedah onkologi Rumah Sakit Hsan Sadikin (RSHS) Bandung. Beliau juga pernah menjabat sebagai PP Perhimpunan Onkologi Indonesia Periode 2010–2014.</string>
+    <string name="pengenalan_drajat2">\tDokter Drajat merupakan dokter spesialis bedah onkologi Rumah Sakit Hasan Sadikin (RSHS) Bandung. Beliau juga pernah menjabat sebagai PP Perhimpunan Onkologi Indonesia Periode 2010 s.d 2014</string>
     <string name="pengenalan_ahyani">dr. Ahyani Raksanagara, M.Kes</string>
-    <string name="pengenalan_ahyani2">Dokter yang pernah terdiagnosis kanker payudara namun telah berhasil menjalani seluruh prodesur pengobatan sehingga mampu kembali beraktivitas secara normal. Saat ini Dokter Ahyani merupakan Kepala Dinas Kesehatan Kota Bandung</string>
+    <string name="pengenalan_ahyani2">\tDokter yang pernah terdiagnosis kanker payudara namun telah berhasil menjalani seluruh prodesur pengobatan sehingga mampu kembali beraktivitas secara normal. Saat ini Dokter Ahyani merupakan Kepala Dinas Kesehatan Kota Bandung</string>
     <string name="umur_error">Umur harus diisi!</string>
     <string name="bagian_1_selesai">Bagian\n1. Pengenalan Tokoh\nSelesai</string>
+    <string name="bandung_cancer_society">Bandung Cancer Society</string>
+    <string name="BCS_facebook">https://www.facebook.com/BCSBandungCancerSociety</string>
+    <string name="BCS_contact">Yanti Setiawan (081222120971)</string>
+    <string name="yayasan_kesehatan_payudara_jawa_barat_ykp">Yayasan Kesehatan Payudara Jawa Barat (YKP)</string>
+    <string name="YKP_alamat">Jl. Hegarmanah 3 bandung 40141</string>
+    <string name="YKP_telepon">Telepon : (022) 2034313</string>
+    <string name="YKP_hotline">Hotline : 081316315279</string>
+    <string name="yayasan_kanker_indonesia_yki">Yayasan Kanker Indonesia (YKI)</string>
+    <string name="YKI_alamat">Jl. Kejaksaan No, 43, Bandung 40112</string>
+    <string name="YKI_telepon">Telepon : (022) 4230240</string>
+    <string name="YKI_email">Email : ykijabar@bdg.centrin.net.id</string>
+    <string name="daftar_isi_header">~ Daftar Isi ~</string>
+    <string name="chapter1_title">1. Pengenalan Tokoh</string>
+    <string name="chapter2_title">2. Ada apa dengan payudara saya?</string>
+    <string name="chapter3_title">3. Mengapa Perlu Konsultasi Ke Dokter?</string>
+    <string name="chapter4_title">4. Ibu Tidak Sendirian</string>
+    <string name="kelompok_yang_peduli">Kelompok yang peduli</string>
+    <string name="kirim_button_text">Kirim</string>
+    <string name="desc_eti">Eti</string>
+    <string name="desc_dr_drajat">Dr. Drajat</string>
+    <string name="desc_dr_ahyani">Dr. Ahyani</string>
+    <string name="desc_finish_chapter_button">Finish Chapter Button</string>
 
 </resources>

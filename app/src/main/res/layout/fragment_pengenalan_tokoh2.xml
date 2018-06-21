@@ -34,16 +34,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cardtext"
-                android:fontFamily="@font/ventura_edding"
-                android:text="@string/pengenalan_drajat2" />
+                android:fontFamily="@font/minou"
+                android:text="@string/pengenalan_drajat2"
+                android:textSize="20sp" />
 
             <ImageView
-                android:contentDescription="Dr. Drajat"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cardtext2"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/pengenalan_drajat" />
+                android:contentDescription="@string/desc_dr_drajat"
+                android:src="@drawable/perkenalan_drajat" />
 
         </RelativeLayout>
 

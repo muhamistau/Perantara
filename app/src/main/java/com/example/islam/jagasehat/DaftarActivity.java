@@ -26,7 +26,6 @@ public class DaftarActivity extends AppCompatActivity {
         if (isChapterOneDone) {
 //            change the color of CardView
             entry1.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
-
         }
     }
 
@@ -49,7 +48,9 @@ public class DaftarActivity extends AppCompatActivity {
     }
 
     public void kontak(View view) {
-
+        Intent intent = new Intent(DaftarActivity.this, ContactActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
     }
 
     @Override
