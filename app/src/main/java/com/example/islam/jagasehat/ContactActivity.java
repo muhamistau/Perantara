@@ -14,16 +14,13 @@ public class ContactActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         onBackPressed();
         return super.onOptionsItemSelected(item);
-
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down);
-
     }
 }

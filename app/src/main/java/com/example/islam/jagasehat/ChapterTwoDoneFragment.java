@@ -26,28 +26,21 @@ public class ChapterTwoDoneFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_chapter_two_done, container, false);
-//        final int chapterNumber = Integer.parseInt(getActivity().getIntent().getStringExtra("chapterNumber"));
-//        Toast.makeText(getActivity(), "" + chapterNumber, Toast.LENGTH_SHORT).show();
+
+        // Defining the ImageView
         ImageView finishButton = (ImageView) view.findViewById(R.id.finishButton);
+        // Setting onClick on the ImageView
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("finish", "2");
-//                if (chapterNumber == 1) {
-//                    resultIntent.putExtra("finish", 1);
-//                } else if (chapterNumber == 2) {
-//                    resultIntent.putExtra("finish", 2);
-//                } else if (chapterNumber == 3) {
-//                    resultIntent.putExtra("finish", 3);
-//                } else {
-//                    resultIntent.putExtra("finish", 4);
-//                }
+                Intent resultIntent = new Intent(); // Creating an empty Intent
+                resultIntent.putExtra("finish", "2"); // Giving the empty Intent a value to pass, indicating chapter 1 is done
+                getActivity().setResult(Activity.RESULT_OK, resultIntent); // Setting result
 
-                getActivity().setResult(Activity.RESULT_OK, resultIntent);
-                getActivity().finish();
-                getActivity().overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down);
+                getActivity().finish(); // Close the Activity
+                getActivity().overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down);// Override transition animation
             }
         });
 
