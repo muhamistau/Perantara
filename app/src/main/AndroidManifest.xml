@@ -27,7 +27,7 @@
             android:name=".DaftarActivity"
             android:theme="@style/NoActionTheme" />
         <activity
-            android:name=".PengenalanTokohActivity"
+            android:name=".StoryActivity"
             android:theme="@style/NoActionTheme" />
         <activity
             android:name=".ContactActivity"
