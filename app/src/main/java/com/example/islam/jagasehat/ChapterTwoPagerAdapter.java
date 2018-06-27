@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class ChapterTwoPagerAdapter extends FragmentPagerAdapter {
 
-    private final int PAGE_COUNT = 3; // Defining how many page in this chapter for the Viewpager
+    private final int PAGE_COUNT = 4; // Defining how many page in this chapter for the Viewpager
     private Context context;
 
     // Default Constructor for PagerAdapter
@@ -23,6 +23,8 @@ public class ChapterTwoPagerAdapter extends FragmentPagerAdapter {
             return new ChapterTwo1Fragment();
         } else if (position == 1) {
             return new ChapterTwo2Fragment();
+        } else if (position == 2) {
+            return new ChapterTwo3Fragment();
         } else {
             return new ChapterTwoDoneFragment();
         }

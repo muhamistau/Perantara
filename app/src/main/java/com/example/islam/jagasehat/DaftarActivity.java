@@ -1,6 +1,8 @@
 package com.example.islam.jagasehat;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,10 +15,13 @@ public class DaftarActivity extends AppCompatActivity {
     boolean chapterOneFinished;
     boolean chapterTwoFinished;
     boolean chapterThreeFinished;
+    boolean chapterFourFinished;
     int chapterOneProgression;
     CardView entry1;
     CardView entry2;
     CardView entry3;
+    CardView entry4;
+    int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,7 @@ public class DaftarActivity extends AppCompatActivity {
         entry1 = (CardView) findViewById(R.id.entry1);
         entry2 = (CardView) findViewById(R.id.entry2);
         entry3 = (CardView) findViewById(R.id.entry3);
+        entry4 = (CardView) findViewById(R.id.entry4);
 
         // Checking if the chapter has ever been completed before
         Boolean isChapterOneDone = getSharedPreferences("PREFERENCE1", MODE_PRIVATE)
@@ -38,18 +44,38 @@ public class DaftarActivity extends AppCompatActivity {
         Boolean isChapterThreeDone = getSharedPreferences("PREFERENCE3", MODE_PRIVATE)
                 .getBoolean("isChapterThreeDone", false);
 
+        Boolean isChapterFourDone = getSharedPreferences("PREFERENCE4", MODE_PRIVATE)
+                .getBoolean("isChapterFourDone", false);
+
         // If the chapter already completed change the color to green at the start
         if (isChapterOneDone) {
             // change the color of CardView
             entry1.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
         }
+
         if (isChapterTwoDone) {
             // change the color of CardView
             entry2.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
         }
+
         if (isChapterThreeDone) {
             // change the color of CardView
             entry3.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
+        }
+
+        if (isChapterFourDone) {
+            entry4.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
+        }
+
+        // if any chapter isn't "done" make a notification that will show 7 Days
+        // (For testing purpose, We only include chapter 1 & 2 completion for the condition)
+        if (!isChapterOneDone || !isChapterTwoDone) {
+            Intent intent = new Intent(DaftarActivity.this, Receiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(DaftarActivity.this, REQUEST_CODE, intent, 0);
+            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+//            alarmManager.set(alarmManager.RTC_WAKEUP, System.currentTimeMillis(), pendingIntent);
+            // Change the intervalMillis to AlarmManager.INTERVAL_DAY*7 before publish
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), AlarmManager.INTERVAL_DAY * 7, pendingIntent);
         }
 
     }
@@ -92,9 +118,12 @@ public class DaftarActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == HAS_FINISHED_VALUE) { // checking if the request code matchup
+
             if (resultCode == Activity.RESULT_OK) { // checking if the result code return RESULT_OK
+
                 // Getting the value of the result coresponding to the finished chapter
                 int whichChapterDone = Integer.parseInt(data.getStringExtra("finish"));
+
                 if (whichChapterDone == 1) { // If the finished chapter is chapter 1
                     chapterOneFinished = true;
                     entry1 = (CardView) findViewById(R.id.entry1);
@@ -113,6 +142,12 @@ public class DaftarActivity extends AppCompatActivity {
                     getSharedPreferences("PREFERENCE3", MODE_PRIVATE).edit()
                             .putBoolean("isChapterThreeDone", chapterThreeFinished).apply();
                     entry3.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
+                } else if (whichChapterDone == 4) { // If the finished chapter is chapter 3
+                    chapterFourFinished = true;
+                    entry4 = (CardView) findViewById(R.id.entry4);
+                    getSharedPreferences("PREFERENCE4", MODE_PRIVATE).edit()
+                            .putBoolean("isChapterFourDone", chapterFourFinished).apply();
+                    entry4.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
                 }
             }
         }
