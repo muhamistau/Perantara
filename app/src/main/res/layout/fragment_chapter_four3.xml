@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:padding="16dp"
-    tools:context=".ChapterOne2Fragment">
+    tools:context=".ChapterFour3Fragment">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -21,31 +21,22 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/cardtext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/ventura_edding"
-                android:text="@string/pengenalan_drajat"
-                android:textAlignment="center"
-                android:textSize="24sp" />
-
-            <TextView
                 android:id="@+id/cardtext2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cardtext"
                 android:fontFamily="@font/minou"
-                android:text="@string/pengenalan_drajat2"
+                android:text="@string/selain_suami_anak_anak_atau_keluarga_besar_kira_kira_siapa_lagi_yang_bisa_membantu_ibu_nibu_bisa_menghubungi_mereka_dan_sampaikan_harapan_ibu"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
             <ImageView
-                android:layout_width="250dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cardtext2"
                 android:layout_centerHorizontal="true"
-                android:contentDescription="@string/desc_dr_drajat"
-                android:src="@drawable/perkenalan_drajat" />
+                android:contentDescription="@string/desc_eti"
+                android:src="@drawable/chapter_four_1" />
 
         </RelativeLayout>
 

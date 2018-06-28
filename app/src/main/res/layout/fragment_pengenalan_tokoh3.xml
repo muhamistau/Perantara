@@ -36,6 +36,7 @@
                 android:layout_below="@id/cardtext"
                 android:fontFamily="@font/minou"
                 android:text="@string/pengenalan_ahyani2"
+                android:textAlignment="center"
                 android:textSize="20sp" />
 
             <ImageView

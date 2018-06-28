@@ -64,12 +64,12 @@ public class DaftarActivity extends AppCompatActivity {
         }
 
         if (isChapterFourDone) {
+            // change the color of CardView
             entry4.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
         }
 
         // if any chapter isn't "done" make a notification that will show 7 Days
-        // (For testing purpose, We only include chapter 1 & 2 completion for the condition)
-        if (!isChapterOneDone || !isChapterTwoDone) {
+        if (!isChapterOneDone || !isChapterTwoDone || !isChapterThreeDone) {
             Intent intent = new Intent(DaftarActivity.this, Receiver.class);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(DaftarActivity.this, REQUEST_CODE, intent, 0);
             AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
@@ -98,11 +98,19 @@ public class DaftarActivity extends AppCompatActivity {
 
     public void cerita3(View view) {
         // Funtion that handle the click at Chapter 3 CardView
+        Intent intent = new Intent(DaftarActivity.this, StoryActivity.class);
+        intent.putExtra("chapterNumber", "3");
+        startActivityForResult(intent, HAS_FINISHED_VALUE);
+        overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
 
     }
 
     public void cerita4(View view) {
         // Funtion that handle the click at Chapter 4 CardView
+        Intent intent = new Intent(DaftarActivity.this, StoryActivity.class);
+        intent.putExtra("chapterNumber", "4");
+        startActivityForResult(intent, HAS_FINISHED_VALUE);
+        overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
 
     }
 

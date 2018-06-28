@@ -37,7 +37,7 @@
     <string name="pengenalan_ahyani">dr. Ahyani Raksanagara, M.Kes</string>
     <string name="pengenalan_ahyani2">\tDokter yang pernah terdiagnosis kanker payudara namun telah berhasil menjalani seluruh prodesur pengobatan sehingga mampu kembali beraktivitas secara normal. Saat ini Dokter Ahyani merupakan Kepala Dinas Kesehatan Kota Bandung</string>
     <string name="umur_error">Umur harus diisi!</string>
-    <string name="bagian_1_selesai">Bagian\n1. Pengenalan Tokoh\nSelesai</string>
+    <string name="bagian_1_selesai">Bagian 1\nPengenalan Tokoh\nSelesai</string>
     <string name="bandung_cancer_society">Bandung Cancer Society</string>
     <string name="BCS_facebook">https://www.facebook.com/BCSBandungCancerSociety</string>
     <string name="BCS_contact">Yanti Setiawan (081222120971)</string>
@@ -63,13 +63,20 @@
 
     <string name="chapter_two_bubble_1">Dokter Ahyani, beberapa teman saya yang merasakan ada benjolan di payudaranya, mereka cemas dan bertanya, \"ada apa dengan payudara saya? apakah benjolan ini bisa diobati?\". Bagaimana pengalaman dokter Ahyani saat itu?</string>
     <string name="chapter_two_bubble_2">Begitu menyadari ada yang mencurigakan, saya segera periksa dan konsultasi ke dokter untuk memastikan apa masalahnya. Jadi, keputusan ibu untuk periksa ke dokter sudah Tepat dan kebanyakan benjolan yang terjadi pada payudara bukan kanker dan berhasil di tangani dengan baik.</string>
-    <string name="bagian_2_selesai">Bagian \n2. Ada Apa Dengan Payudara Saya?\nSelesai</string>
-    
+    <string name="bagian_2_selesai">Bagian 2\nAda Apa Dengan Payudara Saya?\nSelesai</string>
+
     <string name="sadari">SADARI</string>
     <string name="dengan">dengan</string>
     <string name="salira">SALIRA</string>
     <string name="periksa_n_npayudara_n_nsendiri_t">PerikSA  payuDAra  sendiRI</string>
     <string name="rasa_n_nlihat_n_nraba">raSA  LIhat  RAba</string>
+    <string name="bagian_3_nmengapa_perlu_konsultasi_ke_dokter_nselesai">Bagian 3\nMengapa Perlu Konsultasi Ke Dokter?\nSelesai</string>
+    
+    <string name="chapter_3_placeholder_text">Uh oh... Bagian ini masih dalam tahap pembangunan</string>
+    <string name="dukungan_tidak_hanya_dari_suami_dan_keluarga_bisa_juga_dari_sahabat_atau_orang_yang_peduli_pada_ibu">Dukungan tidak hanya dari suami dan keluarga, bisa juga dari sahabat atau orang yang peduli pada Ibu.</string>
+    <string name="selain_suami_anak_anak_atau_keluarga_besar_kira_kira_siapa_lagi_yang_bisa_membantu_ibu_nibu_bisa_menghubungi_mereka_dan_sampaikan_harapan_ibu">Selain suami, anak-anak, atau keluarga besar, kira-kira siapa lagi yang bisa membantu Ibu? Ibu bisa menghubungi, mereka dan sampaikan harapan Ibu.</string>
+    <string name="penting_untuk_diingat">Penting untuk diingat!</string>
+    <string name="bagian_4_nibu_tidak_sendirian_nselesai">Bagian 4\nIbu Tidak Sendirian\nSelesai</string>
 
 
 </resources>

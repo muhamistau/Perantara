@@ -20,6 +20,8 @@ public class StoryActivity extends AppCompatActivity {
         int chapterNumber = Integer.parseInt(getIntent().getStringExtra("chapterNumber"));
         ChapterOnePagerAdapter chapterOnePagerAdapter;
         ChapterTwoPagerAdapter chapterTwoPagerAdapter;
+        ChapterThreePagerAdapter chapterThreePagerAdapter;
+        ChapterFourPagerAdapter chapterFourPagerAdapter;
 
         if (chapterNumber == 1) {
             chapterOnePagerAdapter = new ChapterOnePagerAdapter(getSupportFragmentManager(), this);
@@ -28,14 +30,11 @@ public class StoryActivity extends AppCompatActivity {
             chapterTwoPagerAdapter = new ChapterTwoPagerAdapter(getSupportFragmentManager(), this);
             viewPager.setAdapter(chapterTwoPagerAdapter);
         } else if (chapterNumber == 3) {
-//            chapterTwoPagerAdapter = new ChapterTwoPagerAdapter(getSupportFragmentManager(), this);
-//            viewPager.setAdapter(chapterTwoPagerAdapter);
-        } else if (chapterNumber == 4) {
-//            chapterTwoPagerAdapter = new ChapterTwoPagerAdapter(getSupportFragmentManager(), this);
-//            viewPager.setAdapter(chapterTwoPagerAdapter);
+            chapterThreePagerAdapter = new ChapterThreePagerAdapter(getSupportFragmentManager(), this);
+            viewPager.setAdapter(chapterThreePagerAdapter);
         } else {
-//            chapterTwoPagerAdapter = new ChapterTwoPagerAdapter(getSupportFragmentManager(), this);
-//            viewPager.setAdapter(chapterTwoPagerAdapter);
+            chapterFourPagerAdapter = new ChapterFourPagerAdapter(getSupportFragmentManager(), this);
+            viewPager.setAdapter(chapterFourPagerAdapter);
         }
 
         wormDotsIndicator.setViewPager(viewPager);
