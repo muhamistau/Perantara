@@ -5,9 +5,9 @@ DevPaq team
 - Paquita Putri Ramadhani
 - Muhammad Islam Taufikurahman
 
-## Third Party Projects used in this project ##
-###Material View Pager Dots Indicator###
+## Third Party Projects used in this project
+### Material View Pager Dots Indicator <br/>
 https://github.com/tommybuonomo/dotsindicator
 <br/>
-###Tap Target View###
+### Tap Target View <br/>
 https://github.com/KeepSafe/TapTargetView
