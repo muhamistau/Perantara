@@ -1,5 +1,8 @@
 package com.example.islam.jagasehat;
 
+import android.content.Context;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +21,36 @@ public class StoryActivity extends AppCompatActivity {
     ImageView viewPagerNext;
     ImageView viewPagerPrev;
     int chapterNumber;
+
+    //Use MediaPlayer API and create an global variable for it
+    private MediaPlayer mediaPlayer;
+
+    //handles audio focus when playing a sound file
+    private AudioManager audioManager;
+
+    AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = (new AudioManager.OnAudioFocusChangeListener() {
+        @Override
+        public void onAudioFocusChange(int focusChange) {
+            if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
+                //Pause
+                mediaPlayer.pause();
+                mediaPlayer.seekTo(0);
+            } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
+                //Resume
+                mediaPlayer.start();
+            } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
+                //Stop and release resource
+                releaseMediaPlayer();
+            }
+        }
+    });
+
+    private MediaPlayer.OnCompletionListener completionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            releaseMediaPlayer();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,151 +72,185 @@ public class StoryActivity extends AppCompatActivity {
         ChapterThreePagerAdapter chapterThreePagerAdapter;
         ChapterFourPagerAdapter chapterFourPagerAdapter;
 
-        if (chapterNumber == 1) {
-            chapterOnePagerAdapter = new ChapterOnePagerAdapter(getSupportFragmentManager(), this);
-            viewPager.setAdapter(chapterOnePagerAdapter);
-        } else if (chapterNumber == 2) {
-            chapterTwoPagerAdapter = new ChapterTwoPagerAdapter(getSupportFragmentManager(), this);
-            viewPager.setAdapter(chapterTwoPagerAdapter);
-        } else if (chapterNumber == 3) {
-            chapterThreePagerAdapter = new ChapterThreePagerAdapter(getSupportFragmentManager(), this);
-            viewPager.setAdapter(chapterThreePagerAdapter);
-        } else {
-            chapterFourPagerAdapter = new ChapterFourPagerAdapter(getSupportFragmentManager(), this);
-            viewPager.setAdapter(chapterFourPagerAdapter);
+        switch (chapterNumber) {
+            case 1:
+                chapterOnePagerAdapter = new ChapterOnePagerAdapter(getSupportFragmentManager(), this);
+                viewPager.setAdapter(chapterOnePagerAdapter);
+                break;
+            case 2:
+                chapterTwoPagerAdapter = new ChapterTwoPagerAdapter(getSupportFragmentManager(), this);
+                viewPager.setAdapter(chapterTwoPagerAdapter);
+                break;
+            case 3:
+                chapterThreePagerAdapter = new ChapterThreePagerAdapter(getSupportFragmentManager(), this);
+                viewPager.setAdapter(chapterThreePagerAdapter);
+                break;
+            default:
+                chapterFourPagerAdapter = new ChapterFourPagerAdapter(getSupportFragmentManager(), this);
+                viewPager.setAdapter(chapterFourPagerAdapter);
+                break;
         }
 
         wormDotsIndicator.setViewPager(viewPager);
 
-        if (chapterNumber == 1) {
-            viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-                @Override
-                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        switch (chapterNumber) {
+            case 1:
+                viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-                }
-
-                @Override
-                public void onPageSelected(int position) {
-                    if (position == 0) {
-                        // Fill with code to start audio for Fragment 1
-                        Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
-                    } else if (position == 1) {
-                        // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
-                        Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
-                    } else if (position == 2) {
-                        // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
-                        Toast.makeText(StoryActivity.this, "Position 2", Toast.LENGTH_SHORT).show();
-                    } else {
-                        // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
-                        Toast.makeText(StoryActivity.this, "Position 3", Toast.LENGTH_SHORT).show();
                     }
-                }
 
-                @Override
-                public void onPageScrollStateChanged(int state) {
-
-                }
-            });
-
-            if (storyFirstRun) {
-                TapTargetView.showFor(StoryActivity.this, TapTarget.forView(findViewById(R.id.view_pager_next), "Tekan panah untuk melanjutkan ke dialog selanjutnya, anda juga dapat menggeser layar untuk melanjutkan dialog")
-                                .outerCircleColor(R.color.colorPrimary)
-                                .transparentTarget(true)
-                                .textColor(R.color.white)
-                                .cancelable(false),
-                        new TapTargetView.Listener() {
-                            @Override
-                            public void onTargetClick(TapTargetView view) {
-                                super.onTargetClick(view);
-                                viewPagerNext = (ImageView) findViewById(R.id.view_pager_next);
-                                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
-                            }
-                        });
-                // Remember to uncomment this line
-                getSharedPreferences("PREFERENCE_STORY", MODE_PRIVATE).edit()
-                        .putBoolean("storyFirstRun", false).apply();
-            }
-        } else if (chapterNumber == 2) {
-            viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-                @Override
-                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-                }
-
-                @Override
-                public void onPageSelected(int position) {
-                    if (position == 0) {
-                        // Fill with code to start audio for Fragment 1
-                        Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
-                    } else if (position == 1) {
-                        // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
-                        Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
-                    } else if (position == 2) {
-                        // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
-                        Toast.makeText(StoryActivity.this, "Position 2", Toast.LENGTH_SHORT).show();
-                    } else {
-                        // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
-                        Toast.makeText(StoryActivity.this, "Position 3", Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onPageSelected(int position) {
+                        switch (position) {
+                            case 0:
+                                // Fill with code to start audio for Fragment 1
+                                startMediaPlayer(R.raw.perkenalan_eti);
+                                Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 1:
+                                // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
+                                startMediaPlayer(R.raw.chapter_1);
+                                Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 2:
+                                // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
+                                Toast.makeText(StoryActivity.this, "Position 2", Toast.LENGTH_SHORT).show();
+                                break;
+                            default:
+                                // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
+                                Toast.makeText(StoryActivity.this, "Position 3", Toast.LENGTH_SHORT).show();
+                                break;
+                        }
                     }
-                }
 
-                @Override
-                public void onPageScrollStateChanged(int state) {
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
 
-                }
-            });
-        } else if (chapterNumber == 3) {
-            viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-                @Override
-                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-                }
-
-                @Override
-                public void onPageSelected(int position) {
-                    if (position == 0) {
-                        // Fill with code to start audio for Fragment 1
-                        Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
-                    } else {
-                        // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
-                        Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
                     }
+                });
+
+                if (storyFirstRun) {
+                    TapTargetView.showFor(StoryActivity.this, TapTarget.forView(findViewById(R.id.view_pager_next), "Tekan panah untuk melanjutkan ke dialog selanjutnya, anda juga dapat menggeser layar untuk melanjutkan dialog")
+                                    .outerCircleColor(R.color.colorPrimary)
+                                    .transparentTarget(true)
+                                    .textColor(R.color.white)
+                                    .cancelable(true),
+                            new TapTargetView.Listener() {
+                                @Override
+                                public void onTargetClick(TapTargetView view) {
+                                    super.onTargetClick(view);
+//                                    viewPagerNext = (ImageView) findViewById(R.id.view_pager_next);
+//                                    viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
+                                }
+                            });
+                    // Remember to uncomment this line
+                    getSharedPreferences("PREFERENCE_STORY", MODE_PRIVATE).edit()
+                            .putBoolean("storyFirstRun", false).apply();
                 }
+                break;
 
-                @Override
-                public void onPageScrollStateChanged(int state) {
+            case 2:
+                viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-                }
-            });
-        } else {
-            viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-                @Override
-                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-                }
-
-                @Override
-                public void onPageSelected(int position) {
-                    if (position == 0) {
-                        // Fill with code to start audio for Fragment 1
-                        Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
-                    } else if (position == 1) {
-                        // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
-                        Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
-                    } else if (position == 2) {
-                        // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
-                        Toast.makeText(StoryActivity.this, "Position 2", Toast.LENGTH_SHORT).show();
-                    } else {
-                        // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
-                        Toast.makeText(StoryActivity.this, "Position 3", Toast.LENGTH_SHORT).show();
                     }
-                }
 
-                @Override
-                public void onPageScrollStateChanged(int state) {
+                    @Override
+                    public void onPageSelected(int position) {
+                        switch (position) {
+                            case 0:
+                                // Fill with code to start audio for Fragment 1
+                                Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 1:
+                                // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
+                                Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 2:
+                                // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
+                                Toast.makeText(StoryActivity.this, "Position 2", Toast.LENGTH_SHORT).show();
+                                break;
+                            default:
+                                // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
+                                Toast.makeText(StoryActivity.this, "Position 3", Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                    }
 
-                }
-            });
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
+
+                    }
+                });
+                break;
+
+            case 3:
+                viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                    }
+
+                    @Override
+                    public void onPageSelected(int position) {
+                        switch (position) {
+                            case 0:
+                                // Fill with code to start audio for Fragment 1
+                                Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
+                                break;
+
+                            default:
+                                // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
+                                Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                    }
+
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
+
+                    }
+                });
+                break;
+
+            default:
+                viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                    }
+
+                    @Override
+                    public void onPageSelected(int position) {
+                        switch (position) {
+                            case 0:
+                                // Fill with code to start audio for Fragment 1
+                                Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 1:
+                                // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
+                                Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
+                                break;
+                            case 2:
+                                // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
+                                Toast.makeText(StoryActivity.this, "Position 2", Toast.LENGTH_SHORT).show();
+                                break;
+                            default:
+                                // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
+                                Toast.makeText(StoryActivity.this, "Position 3", Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                    }
+
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
+
+                    }
+                });
+                break;
         }
     }
 
@@ -209,6 +276,49 @@ public class StoryActivity extends AppCompatActivity {
     public void viewPagerPrev(View view) {
         viewPagerPrev = (ImageView) findViewById(R.id.view_pager_prev);
         viewPager.setCurrentItem(viewPager.getCurrentItem() - 1, true);
+    }
+
+    public void startMediaPlayer(int id) {
+        // Create and setup the AudioManager to request audio focus
+        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+
+        releaseMediaPlayer();
+
+        int result = audioManager.requestAudioFocus(onAudioFocusChangeListener,
+                //Use the music stream
+                AudioManager.STREAM_MUSIC,
+                //Request permanent focus
+                AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+        if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+            //Create and setup the MediaPlayer for the audio resource associated with the current word
+            mediaPlayer = MediaPlayer.create(StoryActivity.this, id);
+
+            //Start the audio file
+            mediaPlayer.start();
+
+            mediaPlayer.setOnCompletionListener(completionListener);
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        // When the activity is stopped, release the media player resources because we won't need it anymore
+        releaseMediaPlayer();
+    }
+
+
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currenly palying sound
+        if (mediaPlayer != null) {
+            // Regardles of the current state of the media player, release its resources because we no longer need it.
+            mediaPlayer.release();
+
+            // Set media player back to null. For our code, we've decided that setting the media player to null is an easy way
+            // to tell that the media player is not configured to play an audio file at the moment.
+            mediaPlayer = null;
+            audioManager.abandonAudioFocus(onAudioFocusChangeListener);
+        }
     }
 
 }
