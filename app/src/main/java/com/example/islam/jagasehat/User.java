@@ -2,8 +2,8 @@ package com.example.islam.jagasehat;
 
 public class User {
 
-    int umur;
-    String jk, pendidikan, pekerjaan, email;
+    public int umur;
+    public String jk, pendidikan, pekerjaan, email;
 
     public User() {
 
