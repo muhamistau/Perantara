@@ -26,7 +26,7 @@ public class ChapterOneDoneFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_cerita_selesai, container, false);
+        final View view = inflater.inflate(R.layout.fragment_chapter_one_done, container, false);
 
         // Defining the ImageView
         ImageView finishButton = (ImageView) view.findViewById(R.id.finishButton);

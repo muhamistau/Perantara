@@ -9,6 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 
+import com.getkeepsafe.taptargetview.TapTarget;
+import com.getkeepsafe.taptargetview.TapTargetView;
+
 public class DaftarActivity extends AppCompatActivity {
 
     static final int HAS_FINISHED_VALUE = 1;
@@ -16,7 +19,6 @@ public class DaftarActivity extends AppCompatActivity {
     boolean chapterTwoFinished;
     boolean chapterThreeFinished;
     boolean chapterFourFinished;
-    int chapterOneProgression;
     CardView entry1;
     CardView entry2;
     CardView entry3;
@@ -33,6 +35,29 @@ public class DaftarActivity extends AppCompatActivity {
         entry2 = (CardView) findViewById(R.id.entry2);
         entry3 = (CardView) findViewById(R.id.entry3);
         entry4 = (CardView) findViewById(R.id.entry4);
+
+        // Checking first run or not
+        Boolean daftarFirstRun = getSharedPreferences("PREFERENCE_DAFTAR", MODE_PRIVATE)
+                .getBoolean("daftarFirstRun", true);
+
+        if (daftarFirstRun) {
+            TapTargetView.showFor(DaftarActivity.this,
+                    TapTarget.forView(findViewById(R.id.entry1), "Tap disini untuk membaca Bagian 1")
+                            .outerCircleColor(R.color.colorPrimary)
+                            .transparentTarget(true)
+                            .textColor(R.color.white)
+                            .cancelable(false),
+                    new TapTargetView.Listener() {
+                        @Override
+                        public void onTargetClick(TapTargetView view) {
+                            super.onTargetClick(view);
+                            Intent intent = new Intent(DaftarActivity.this, StoryActivity.class);
+                            intent.putExtra("chapterNumber", "1");
+                            startActivityForResult(intent, HAS_FINISHED_VALUE);
+                            overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+                        }
+                    });
+        }
 
         // Checking if the chapter has ever been completed before
         Boolean isChapterOneDone = getSharedPreferences("PREFERENCE1", MODE_PRIVATE)
@@ -69,14 +94,18 @@ public class DaftarActivity extends AppCompatActivity {
         }
 
         // if any chapter isn't "done" make a notification that will show 7 Days
-        if (!isChapterOneDone || !isChapterTwoDone || !isChapterThreeDone) {
+        if (!isChapterOneDone || !isChapterTwoDone || !isChapterThreeDone || !isChapterFourDone) {
             Intent intent = new Intent(DaftarActivity.this, Receiver.class);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(DaftarActivity.this, REQUEST_CODE, intent, 0);
             AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 //            alarmManager.set(alarmManager.RTC_WAKEUP, System.currentTimeMillis(), pendingIntent);
             // Change the intervalMillis to AlarmManager.INTERVAL_DAY*7 before publish
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), AlarmManager.INTERVAL_DAY * 7, pendingIntent);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 15 * 1000, pendingIntent);
         }
+
+        // Remember to uncomment this line
+        getSharedPreferences("PREFERENCE_DAFTAR", MODE_PRIVATE).edit()
+                .putBoolean("daftarFirstRun", false).apply();
 
     }
 
