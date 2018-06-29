@@ -100,7 +100,7 @@ public class DaftarActivity extends AppCompatActivity {
             AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 //            alarmManager.set(alarmManager.RTC_WAKEUP, System.currentTimeMillis(), pendingIntent);
             // Change the intervalMillis to AlarmManager.INTERVAL_DAY*7 before publish
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 15 * 1000, pendingIntent);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), AlarmManager.INTERVAL_DAY * 7, pendingIntent);
         }
 
         // Remember to uncomment this line
