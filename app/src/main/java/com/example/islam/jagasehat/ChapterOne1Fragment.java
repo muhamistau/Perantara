@@ -86,7 +86,6 @@ public class ChapterOne1Fragment extends Fragment {
         releaseMediaPlayer();
     }
 
-
     private void releaseMediaPlayer() {
         // If the media player is not null, then it may be currenly palying sound
         if (mediaPlayer != null) {

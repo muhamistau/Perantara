@@ -106,16 +106,17 @@ public class StoryActivity extends AppCompatActivity {
                         switch (position) {
                             case 0:
                                 // Fill with code to start audio for Fragment 1
-                                startMediaPlayer(R.raw.perkenalan_eti);
+                                startDialog(R.raw.perkenalan_eti);
                                 Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
                                 break;
                             case 1:
                                 // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
-                                startMediaPlayer(R.raw.chapter_1);
+                                startDialog(R.raw.chapter_1_drajat);
                                 Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
                                 break;
                             case 2:
                                 // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
+                                startDialog(R.raw.chapter_1_ahyani);
                                 Toast.makeText(StoryActivity.this, "Position 2", Toast.LENGTH_SHORT).show();
                                 break;
                             default:
@@ -163,6 +164,7 @@ public class StoryActivity extends AppCompatActivity {
                         switch (position) {
                             case 0:
                                 // Fill with code to start audio for Fragment 1
+                                startDialog(R.raw.chapter_2_eti);
                                 Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
                                 break;
                             case 1:
@@ -278,7 +280,7 @@ public class StoryActivity extends AppCompatActivity {
         viewPager.setCurrentItem(viewPager.getCurrentItem() - 1, true);
     }
 
-    public void startMediaPlayer(int id) {
+    public void startDialog(int id) {
         // Create and setup the AudioManager to request audio focus
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
