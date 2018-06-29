@@ -24,6 +24,9 @@ public class StoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
 
+        Boolean storyFirstRun = getSharedPreferences("PREFERENCE_STORY", MODE_PRIVATE)
+                .getBoolean("storyFirstRun", true);
+
         viewPagerNext = (ImageView) findViewById(R.id.view_pager_next);
         viewPagerPrev = (ImageView) findViewById(R.id.view_pager_prev);
 
@@ -81,19 +84,25 @@ public class StoryActivity extends AppCompatActivity {
 
                 }
             });
-            TapTargetView.showFor(StoryActivity.this, TapTarget.forView(findViewById(R.id.view_pager_next), "Tekan panah untuk melanjutkan ke dialog selanjutnya, anda juga dapat menggeser layar untuk melanjutkan dialog")
-                            .outerCircleColor(R.color.colorPrimary)
-                            .transparentTarget(true)
-                            .textColor(R.color.white)
-                            .cancelable(false),
-                    new TapTargetView.Listener() {
-                        @Override
-                        public void onTargetClick(TapTargetView view) {
-                            super.onTargetClick(view);
-                            viewPagerNext = (ImageView) findViewById(R.id.view_pager_next);
-                            viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
-                        }
-                    });
+
+            if (storyFirstRun) {
+                TapTargetView.showFor(StoryActivity.this, TapTarget.forView(findViewById(R.id.view_pager_next), "Tekan panah untuk melanjutkan ke dialog selanjutnya, anda juga dapat menggeser layar untuk melanjutkan dialog")
+                                .outerCircleColor(R.color.colorPrimary)
+                                .transparentTarget(true)
+                                .textColor(R.color.white)
+                                .cancelable(false),
+                        new TapTargetView.Listener() {
+                            @Override
+                            public void onTargetClick(TapTargetView view) {
+                                super.onTargetClick(view);
+                                viewPagerNext = (ImageView) findViewById(R.id.view_pager_next);
+                                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
+                            }
+                        });
+                // Remember to uncomment this line
+                getSharedPreferences("PREFERENCE_STORY", MODE_PRIVATE).edit()
+                        .putBoolean("storyFirstRun", false).apply();
+            }
         } else if (chapterNumber == 2) {
             viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                 @Override
