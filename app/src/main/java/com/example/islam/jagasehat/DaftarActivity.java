@@ -23,6 +23,7 @@ public class DaftarActivity extends AppCompatActivity {
     CardView entry2;
     CardView entry3;
     CardView entry4;
+    CardView shareButton;
     int REQUEST_CODE = 1;
 
     @Override
@@ -35,6 +36,19 @@ public class DaftarActivity extends AppCompatActivity {
         entry2 = (CardView) findViewById(R.id.entry2);
         entry3 = (CardView) findViewById(R.id.entry3);
         entry4 = (CardView) findViewById(R.id.entry4);
+        shareButton = (CardView) findViewById(R.id.share_button);
+
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent share = new Intent(Intent.ACTION_SEND);
+                share.setType("text/plain");
+
+                share.putExtra(Intent.EXTRA_SUBJECT, "Saya menggunakan JagaSehat");
+                share.putExtra(Intent.EXTRA_TEXT, "Saya menggunakan aplikasi JagaSehat, aplikasi edukasi mengenai Kanker Payudara");
+                startActivity(Intent.createChooser(share, "Bagikan"));
+            }
+        });
 
         // Checking first run or not
         Boolean daftarFirstRun = getSharedPreferences("PREFERENCE_DAFTAR", MODE_PRIVATE)
