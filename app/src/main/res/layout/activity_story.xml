@@ -47,4 +47,16 @@
         android:onClick="viewPagerPrev"
         android:src="@drawable/baseline_arrow_back_white_36dp" />
 
+    <ImageView
+        android:id="@+id/finish_chapter"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:contentDescription="@string/next_arrow"
+        android:onClick="finish_chapter"
+        android:src="@drawable/baseline_check_white_36dp"
+        android:visibility="gone" />
+
 </RelativeLayout>

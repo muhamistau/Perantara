@@ -1,7 +1,6 @@
 package com.example.islam.jagasehat;
 
 
-import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -55,25 +54,25 @@ public class ChapterTwo1Fragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Create and setup the AudioManager to request audio focus
-        audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
-
-        releaseMediaPlayer();
-
-        int result = audioManager.requestAudioFocus(onAudioFocusChangeListener,
-                //Use the music stream
-                AudioManager.STREAM_MUSIC,
-                //Request permanent focus
-                AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
-        if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-            //Create and setup the MediaPlayer for the audio resource associated with the current word
-            mediaPlayer = MediaPlayer.create(getActivity(), R.raw.chapter_2_eti);
-
-            //Start the audio file
-            mediaPlayer.start();
-
-            mediaPlayer.setOnCompletionListener(completionListener);
-        }
+//        // Create and setup the AudioManager to request audio focus
+//        audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
+//
+//        releaseMediaPlayer();
+//
+//        int result = audioManager.requestAudioFocus(onAudioFocusChangeListener,
+//                //Use the music stream
+//                AudioManager.STREAM_MUSIC,
+//                //Request permanent focus
+//                AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+//        if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+//            //Create and setup the MediaPlayer for the audio resource associated with the current word
+//            mediaPlayer = MediaPlayer.create(getActivity(), R.raw.chapter_2_eti);
+//
+//            //Start the audio file
+//            mediaPlayer.start();
+//
+//            mediaPlayer.setOnCompletionListener(completionListener);
+//        }
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_chapter_two1, container, false);

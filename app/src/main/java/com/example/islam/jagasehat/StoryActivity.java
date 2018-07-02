@@ -1,6 +1,8 @@
 package com.example.islam.jagasehat;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -9,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetView;
@@ -20,6 +21,8 @@ public class StoryActivity extends AppCompatActivity {
     ViewPager viewPager;
     ImageView viewPagerNext;
     ImageView viewPagerPrev;
+    ImageView finishButton;
+    Intent resultIntent;
     int chapterNumber;
 
     //Use MediaPlayer API and create an global variable for it
@@ -57,11 +60,14 @@ public class StoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
 
-        Boolean storyFirstRun = getSharedPreferences("PREFERENCE_STORY", MODE_PRIVATE)
+        final Boolean storyFirstRun = getSharedPreferences("PREFERENCE_STORY", MODE_PRIVATE)
                 .getBoolean("storyFirstRun", true);
 
         viewPagerNext = (ImageView) findViewById(R.id.view_pager_next);
         viewPagerPrev = (ImageView) findViewById(R.id.view_pager_prev);
+        finishButton = (ImageView) findViewById(R.id.finish_chapter);
+
+        viewPagerPrev.setVisibility(View.GONE);
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         WormDotsIndicator wormDotsIndicator = (WormDotsIndicator) findViewById(R.id.worm_dots_indicator);
@@ -105,23 +111,60 @@ public class StoryActivity extends AppCompatActivity {
                     public void onPageSelected(int position) {
                         switch (position) {
                             case 0:
-                                // Fill with code to start audio for Fragment 1
-                                startDialog(R.raw.perkenalan_eti);
-                                Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
+                                releaseMediaPlayer();
+
+                                // Set The Prev and Next button visibility
+                                viewPagerPrev.setVisibility(View.GONE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
                                 break;
                             case 1:
-                                // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
-                                startDialog(R.raw.chapter_1_drajat);
-                                Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
+                                // Fill with code to start audio for Fragment 1
+                                releaseMediaPlayer();
+                                startDialog(R.raw.perkenalan_eti);
+
+                                // Set The Prev and Next button visibility
+                                viewPagerPrev.setVisibility(View.VISIBLE);
                                 break;
                             case 2:
+
+                                // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
+                                releaseMediaPlayer();
+                                startDialog(R.raw.chapter_1_drajat);
+                                break;
+                            case 3:
                                 // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
+                                releaseMediaPlayer();
                                 startDialog(R.raw.chapter_1_ahyani);
-                                Toast.makeText(StoryActivity.this, "Position 2", Toast.LENGTH_SHORT).show();
+
+                                // Set The Prev and Next button visibility
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
                                 break;
                             default:
                                 // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
-                                Toast.makeText(StoryActivity.this, "Position 3", Toast.LENGTH_SHORT).show();
+                                releaseMediaPlayer();
+
+                                // Set The Prev and Next button visibility
+                                viewPagerNext.setVisibility(View.GONE);
+                                finishButton.setVisibility(View.VISIBLE);
+
+                                if (storyFirstRun) {
+                                    TapTargetView.showFor(StoryActivity.this,
+                                            TapTarget.forView(findViewById(R.id.finish_chapter),
+                                                    "Ketuk disini untuk menyelesaikan chapter")
+                                                    .outerCircleColor(R.color.colorPrimary)
+                                                    .transparentTarget(true)
+                                                    .textColor(R.color.white)
+                                                    .cancelable(true),
+                                            new TapTargetView.Listener() {
+                                                @Override
+                                                public void onTargetClick(TapTargetView view) {
+                                                    super.onTargetClick(view);
+
+                                                }
+                                            });
+                                }
+
                                 break;
                         }
                     }
@@ -133,7 +176,9 @@ public class StoryActivity extends AppCompatActivity {
                 });
 
                 if (storyFirstRun) {
-                    TapTargetView.showFor(StoryActivity.this, TapTarget.forView(findViewById(R.id.view_pager_next), "Tekan panah untuk melanjutkan ke dialog selanjutnya, anda juga dapat menggeser layar untuk melanjutkan dialog")
+                    TapTargetView.showFor(StoryActivity.this,
+                            TapTarget.forView(findViewById(R.id.view_pager_next),
+                                    "Tekan panah untuk melanjutkan ke dialog selanjutnya, anda juga dapat menggeser layar untuk melanjutkan dialog")
                                     .outerCircleColor(R.color.colorPrimary)
                                     .transparentTarget(true)
                                     .textColor(R.color.white)
@@ -146,9 +191,6 @@ public class StoryActivity extends AppCompatActivity {
 //                                    viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
                                 }
                             });
-                    // Remember to uncomment this line
-                    getSharedPreferences("PREFERENCE_STORY", MODE_PRIVATE).edit()
-                            .putBoolean("storyFirstRun", false).apply();
                 }
                 break;
 
@@ -163,21 +205,40 @@ public class StoryActivity extends AppCompatActivity {
                     public void onPageSelected(int position) {
                         switch (position) {
                             case 0:
-                                // Fill with code to start audio for Fragment 1
-                                startDialog(R.raw.chapter_2_eti);
-                                Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
+                                releaseMediaPlayer();
+
+                                // Set The Prev and Next button visibility
+                                viewPagerPrev.setVisibility(View.GONE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
                                 break;
                             case 1:
-                                // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
-                                Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
+                                // Fill with code to start audio for Fragment 1
+                                releaseMediaPlayer();
+                                startDialog(R.raw.chapter_2_eti);
+
+                                // Set The Prev and Next button visibility
+                                viewPagerPrev.setVisibility(View.VISIBLE);
                                 break;
                             case 2:
                                 // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
-                                Toast.makeText(StoryActivity.this, "Position 2", Toast.LENGTH_SHORT).show();
+                                releaseMediaPlayer();
                                 break;
+
+                            case 3:
+                                releaseMediaPlayer();
+
+                                // Set The Prev and Next button visibility
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
                             default:
                                 // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
-                                Toast.makeText(StoryActivity.this, "Position 3", Toast.LENGTH_SHORT).show();
+                                releaseMediaPlayer();
+
+                                // Set The Prev and Next button visibility
+                                viewPagerNext.setVisibility(View.GONE);
+                                finishButton.setVisibility(View.VISIBLE);
                                 break;
                         }
                     }
@@ -201,12 +262,19 @@ public class StoryActivity extends AppCompatActivity {
                         switch (position) {
                             case 0:
                                 // Fill with code to start audio for Fragment 1
-                                Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
+                                viewPagerPrev.setVisibility(View.GONE);
+                                break;
+
+                            case 1:
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
                                 break;
 
                             default:
                                 // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
-                                Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
+                                viewPagerNext.setVisibility(View.GONE);
+                                finishButton.setVisibility(View.VISIBLE);
                                 break;
                         }
                     }
@@ -230,19 +298,24 @@ public class StoryActivity extends AppCompatActivity {
                         switch (position) {
                             case 0:
                                 // Fill with code to start audio for Fragment 1
-                                Toast.makeText(StoryActivity.this, "Position 0", Toast.LENGTH_SHORT).show();
+                                viewPagerPrev.setVisibility(View.GONE);
                                 break;
                             case 1:
                                 // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
-                                Toast.makeText(StoryActivity.this, "Position 1", Toast.LENGTH_SHORT).show();
+                                viewPagerPrev.setVisibility(View.VISIBLE);
                                 break;
                             case 2:
                                 // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
-                                Toast.makeText(StoryActivity.this, "Position 2", Toast.LENGTH_SHORT).show();
+                                break;
+
+                            case 3:
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
                                 break;
                             default:
                                 // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
-                                Toast.makeText(StoryActivity.this, "Position 3", Toast.LENGTH_SHORT).show();
+                                viewPagerNext.setVisibility(View.GONE);
+                                finishButton.setVisibility(View.VISIBLE);
                                 break;
                         }
                     }
@@ -314,12 +387,57 @@ public class StoryActivity extends AppCompatActivity {
         // If the media player is not null, then it may be currenly palying sound
         if (mediaPlayer != null) {
             // Regardles of the current state of the media player, release its resources because we no longer need it.
+            mediaPlayer.stop();
             mediaPlayer.release();
 
             // Set media player back to null. For our code, we've decided that setting the media player to null is an easy way
             // to tell that the media player is not configured to play an audio file at the moment.
             mediaPlayer = null;
             audioManager.abandonAudioFocus(onAudioFocusChangeListener);
+        }
+    }
+
+    public void finish_chapter(View view) {
+        switch (chapterNumber) {
+            case 1:
+                // Remember to uncomment this line
+                getSharedPreferences("PREFERENCE_STORY", MODE_PRIVATE).edit()
+                        .putBoolean("storyFirstRun", false).apply();
+                resultIntent = new Intent(); // Creating an empty Intent
+                resultIntent.putExtra("finish", "1");  // Giving the empty Intent a value to pass, indicating chapter 1 is done
+                setResult(Activity.RESULT_OK, resultIntent); // Setting result
+
+                finish(); // Close the Activity
+                overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down); // Override transition animation
+                break;
+
+            case 2:
+                resultIntent = new Intent(); // Creating an empty Intent
+                resultIntent.putExtra("finish", "2");  // Giving the empty Intent a value to pass, indicating chapter 1 is done
+                setResult(Activity.RESULT_OK, resultIntent); // Setting result
+
+                finish(); // Close the Activity
+                overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down); // Override transition animation
+                break;
+
+            case 3:
+                resultIntent = new Intent(); // Creating an empty Intent
+                resultIntent.putExtra("finish", "3");  // Giving the empty Intent a value to pass, indicating chapter 1 is done
+                setResult(Activity.RESULT_OK, resultIntent); // Setting result
+
+                finish(); // Close the Activity
+                overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down); // Override transition animation
+                break;
+
+            default:
+                resultIntent = new Intent(); // Creating an empty Intent
+                resultIntent.putExtra("finish", "4");  // Giving the empty Intent a value to pass, indicating chapter 1 is done
+                setResult(Activity.RESULT_OK, resultIntent); // Setting result
+
+                finish(); // Close the Activity
+                overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down); // Override transition animation
+                break;
+
         }
     }
 

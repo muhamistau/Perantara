@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:padding="16dp"
-    tools:context=".ChapterOneDoneFragment">
+    tools:context=".ChapterWelcomeFragment">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/ventura_edding"
-                android:text="@string/bagian_1_selesai"
+                android:text="@string/bagian_2_selesai"
                 android:textAlignment="center"
                 android:textSize="32sp" />
 
