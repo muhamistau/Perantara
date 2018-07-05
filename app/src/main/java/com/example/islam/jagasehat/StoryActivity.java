@@ -315,6 +315,7 @@ public class StoryActivity extends AppCompatActivity {
                                 break;
                             default:
                                 // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
+                                releaseMediaPlayer();
                                 viewPagerNext.setVisibility(View.GONE);
                                 finishButton.setVisibility(View.VISIBLE);
                                 break;
