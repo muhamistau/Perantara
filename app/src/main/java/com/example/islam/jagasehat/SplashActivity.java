@@ -21,8 +21,5 @@ public class SplashActivity extends AppCompatActivity {
             startActivity(new Intent(SplashActivity.this, DaftarActivity.class));
             finish();
         }
-
-        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
-                .putBoolean("isFirstRun", false).apply();
     }
 }

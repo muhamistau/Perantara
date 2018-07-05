@@ -1,24 +1,18 @@
 package com.example.islam.jagasehat;
 
 import android.content.Intent;
-import android.support.design.widget.Snackbar;
+import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import org.w3c.dom.Text;
 
 public class FormActivity extends AppCompatActivity {
 
@@ -95,6 +89,9 @@ public class FormActivity extends AppCompatActivity {
 
             //Pushing user to 'users node using userID
             mDatabase.child("users").child(userId).setValue(user);
+
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                    .putBoolean("isFirstRun", false).apply();
 
             Intent intent = new Intent(FormActivity.this, DaftarActivity.class);
             startActivity(intent);
