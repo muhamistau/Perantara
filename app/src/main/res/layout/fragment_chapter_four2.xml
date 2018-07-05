@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cardtext"
                 android:fontFamily="@font/minou"
-                android:text="@string/dukungan_tidak_hanya_dari_suami_dan_keluarga_bisa_juga_dari_sahabat_atau_orang_yang_peduli_pada_ibu"
+                android:text="@string/selain_suami_anak_anak_atau_keluarga_besar_kira_kira_siapa_lagi_yang_bisa_membantu_ibu_nibu_bisa_menghubungi_mereka_dan_sampaikan_harapan_ibu"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 

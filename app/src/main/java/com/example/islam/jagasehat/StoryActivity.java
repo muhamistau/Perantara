@@ -222,6 +222,7 @@ public class StoryActivity extends AppCompatActivity {
                             case 2:
                                 // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
                                 releaseMediaPlayer();
+                                startDialog(R.raw.chapter_2_ahyani);
                                 break;
 
                             case 3:
@@ -302,13 +303,13 @@ public class StoryActivity extends AppCompatActivity {
                                 break;
                             case 1:
                                 // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
+                                releaseMediaPlayer();
+                                startDialog(R.raw.chapter_4_1);
                                 viewPagerPrev.setVisibility(View.VISIBLE);
                                 break;
                             case 2:
-                                // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
-                                break;
-
-                            case 3:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.chapter_4_2);
                                 viewPagerNext.setVisibility(View.VISIBLE);
                                 finishButton.setVisibility(View.GONE);
                                 break;

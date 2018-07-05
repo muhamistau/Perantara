@@ -21,14 +21,31 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/cardtext"
-                android:layout_width="match_parent"
+                android:id="@+id/penting"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
                 android:fontFamily="@font/ventura_edding"
                 android:text="@string/penting_untuk_diingat"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/cardtext2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/penting"
+                android:fontFamily="@font/minou"
+                android:text="@string/dukungan_tidak_hanya_dari_suami_dan_keluarga_bisa_juga_dari_sahabat_atau_orang_yang_peduli_pada_ibu"
                 android:textAlignment="center"
-                android:textSize="36sp" />
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardtext2"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/desc_eti"
+                android:src="@drawable/chapter_four_1" />
 
         </RelativeLayout>
 
