@@ -1,9 +1,14 @@
-# JagaSehat
+# Perantara
 Final project for Object Oriented programming II Course <br/>
+and IRL Project with Mr. Erick Paulus
 DevPaq team
-- Fajar Adiansyah Rahiq
 - Paquita Putri Ramadhani
 - Muhammad Islam Taufikurahman
+
+Voice Actor
+- Vega Savera Yuana as Eti
+- Fauzi Faruq Nabbani as Dr. Drajat
+- Hilya Tsaniya Ismet as Dr. Ahyani
 
 ## Third Party Projects used in this project
 ### Material View Pager Dots Indicator <br/>
