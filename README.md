@@ -1,6 +1,6 @@
 # Perantara
 Final project for Object Oriented programming II Course <br/>
-and IRL Project with Mr. Erick Paulus
+and IRL Project with Mr. Erick Paulus <br/>
 DevPaq team
 - Paquita Putri Ramadhani
 - Muhammad Islam Taufikurahman
