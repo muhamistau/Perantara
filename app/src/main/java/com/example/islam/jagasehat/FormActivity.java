@@ -63,6 +63,13 @@ public class FormActivity extends AppCompatActivity {
     }
 
 
+    public final static boolean isValidEmail(CharSequence target) {
+        if (target == null)
+            return false;
+
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
+
     void kirimData() {
 
         if (TextUtils.isEmpty(umur.getText())) {
@@ -72,31 +79,39 @@ public class FormActivity extends AppCompatActivity {
 
         } else {
 
-            mDatabase = FirebaseDatabase.getInstance().getReference();
+            if (isValidEmail(email.getText().toString()) == true || TextUtils.isEmpty(email.getText()) == true) {
 
-            //Getting Values
-            int umurAngka = Integer.parseInt(umur.getText().toString());
-            String jkText = spinJK.getSelectedItem().toString();
-            String pendidikanText = spinPendidikan.getSelectedItem().toString();
-            String pekerjaanText = spinPekerjaan.getSelectedItem().toString();
-            String emailText = email.getText().toString();
+                mDatabase = FirebaseDatabase.getInstance().getReference();
 
-            //Creating new user node
-            String userId = mDatabase.push().getKey();
+                //Getting Values
+                int umurAngka = Integer.parseInt(umur.getText().toString());
+                String jkText = spinJK.getSelectedItem().toString();
+                String pendidikanText = spinPendidikan.getSelectedItem().toString();
+                String pekerjaanText = spinPekerjaan.getSelectedItem().toString();
+                String emailText = email.getText().toString();
 
-            //Creating user Object
-            User user = new User(umurAngka, jkText, pendidikanText, pekerjaanText, emailText);
+                //Creating new user node
+                String userId = mDatabase.push().getKey();
 
-            //Pushing user to 'users node using userID
-            mDatabase.child("users").child(userId).setValue(user);
+                //Creating user Object
+                User user = new User(umurAngka, jkText, pendidikanText, pekerjaanText, emailText);
 
-            getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
-                    .putBoolean("isFirstRun", false).apply();
+                //Pushing user to 'users node using userID
+                mDatabase.child("users").child(userId).setValue(user);
 
-            Intent intent = new Intent(FormActivity.this, DaftarActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
-            finish();
+                getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                        .putBoolean("isFirstRun", false).apply();
+
+                Intent intent = new Intent(FormActivity.this, DaftarActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+                finish();
+
+            } else {
+                emailInputLayout.setError("Email anda tidak valid!");
+                emailInputLayout.requestFocus();
+            }
+
         }
 
     }

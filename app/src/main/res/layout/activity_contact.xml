@@ -1,166 +1,328 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".ContactActivity">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/card1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?android:selectableItemBackground"
-        android:minHeight="100dp"
-        app:cardCornerRadius="20dp"
-        app:contentPadding="16dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <RelativeLayout
+        <android.support.v7.widget.CardView
+            android:id="@+id/card1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:minHeight="100dp"
+            app:cardCornerRadius="20dp"
+            app:contentPadding="16dp">
 
-            <TextView
-                android:id="@+id/organization1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/minou"
-                android:maxLines="1"
-                android:text="@string/bandung_cancer_society"
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/website1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/organization1"
-                android:fontFamily="@font/minou"
-                android:maxLines="1"
-                android:text="@string/BCS_facebook" />
+                <TextView
+                    android:id="@+id/organization1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/minou"
+                    android:maxLines="1"
+                    android:text="@string/bandung_cancer_society"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/website1"
-                android:fontFamily="@font/minou"
-                android:text="@string/BCS_contact" />
+                <TextView
+                    android:id="@+id/website1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/organization1"
+                    android:fontFamily="@font/minou"
+                    android:maxLines="1"
+                    android:text="@string/BCS_facebook" />
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/website1"
+                    android:fontFamily="@font/minou"
+                    android:text="@string/BCS_contact" />
 
-    </android.support.v7.widget.CardView>
+            </RelativeLayout>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/card2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?android:selectableItemBackground"
-        android:minHeight="100dp"
-        app:cardCornerRadius="20dp"
-        app:contentPadding="16dp">
+        </android.support.v7.widget.CardView>
 
-        <RelativeLayout
+        <android.support.v7.widget.CardView
+            android:id="@+id/card2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:minHeight="100dp"
+            app:cardCornerRadius="20dp"
+            app:contentPadding="16dp">
 
-            <TextView
-                android:id="@+id/organization2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/minou"
-                android:maxLines="1"
-                android:text="@string/yayasan_kesehatan_payudara_jawa_barat_ykp"
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/alamat1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/organization2"
-                android:fontFamily="@font/minou"
-                android:maxLines="1"
-                android:text="@string/YKP_alamat" />
+                <TextView
+                    android:id="@+id/organization2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/minou"
+                    android:maxLines="1"
+                    android:text="@string/yayasan_kesehatan_payudara_jawa_barat_ykp"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/telepon1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/alamat1"
-                android:fontFamily="@font/minou"
-                android:text="@string/YKP_telepon" />
+                <TextView
+                    android:id="@+id/alamat1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/organization2"
+                    android:fontFamily="@font/minou"
+                    android:maxLines="1"
+                    android:text="@string/YKP_alamat" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/telepon1"
-                android:fontFamily="@font/minou"
-                android:text="@string/YKP_hotline" />
+                <TextView
+                    android:id="@+id/telepon1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/alamat1"
+                    android:fontFamily="@font/minou"
+                    android:text="@string/YKP_telepon" />
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/telepon1"
+                    android:fontFamily="@font/minou"
+                    android:text="@string/YKP_hotline" />
 
-    </android.support.v7.widget.CardView>
+            </RelativeLayout>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/card3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?android:selectableItemBackground"
-        android:minHeight="100dp"
-        app:cardCornerRadius="20dp"
-        app:contentPadding="16dp">
+        </android.support.v7.widget.CardView>
 
-        <RelativeLayout
+        <android.support.v7.widget.CardView
+            android:id="@+id/card3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:minHeight="100dp"
+            app:cardCornerRadius="20dp"
+            app:contentPadding="16dp">
 
-            <TextView
-                android:id="@+id/organization3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/minou"
-                android:maxLines="1"
-                android:text="@string/yayasan_kanker_indonesia_yki"
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/alamat2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/organization3"
-                android:fontFamily="@font/minou"
-                android:maxLines="1"
-                android:text="@string/YKI_alamat" />
+                <TextView
+                    android:id="@+id/organization3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/minou"
+                    android:maxLines="1"
+                    android:text="@string/yayasan_kanker_indonesia_yki"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/telepon2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/alamat2"
-                android:fontFamily="@font/minou"
-                android:text="@string/YKI_telepon" />
+                <TextView
+                    android:id="@+id/alamat2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/organization3"
+                    android:fontFamily="@font/minou"
+                    android:maxLines="1"
+                    android:text="@string/YKI_alamat" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/telepon2"
-                android:fontFamily="@font/minou"
-                android:text="@string/YKI_email" />
+                <TextView
+                    android:id="@+id/telepon2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/alamat2"
+                    android:fontFamily="@font/minou"
+                    android:text="@string/YKI_telepon" />
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/telepon2"
+                    android:fontFamily="@font/minou"
+                    android:text="@string/YKI_email" />
 
-    </android.support.v7.widget.CardView>
+            </RelativeLayout>
 
-</LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:minHeight="100dp"
+            app:cardCornerRadius="20dp"
+            app:contentPadding="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/organization4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/minou"
+                    android:maxLines="1"
+                    android:text="BPJS Kesehatan Kantor Divisi Regional Jawa Barat"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/website4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/organization4"
+                    android:fontFamily="@font/minou"
+                    android:maxLines="1"
+                    android:text="Alamat: Jl. Dr. Djundjunan No. 144 PO BOX 1617 Bandung 40163" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/website4"
+                    android:fontFamily="@font/minou"
+                    android:text="Telepon: (022)2005892" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:minHeight="100dp"
+            app:cardCornerRadius="20dp"
+            app:contentPadding="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/organization5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/minou"
+                    android:maxLines="1"
+                    android:text="BPJS Kesehatan Kantor Bandung"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/website5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/organization5"
+                    android:fontFamily="@font/minou"
+                    android:maxLines="1"
+                    android:text="Alamat: Jl. Pelajar Pejuang 45 No.66 Bandung 40263" />
+
+                <TextView
+                    android:id="@+id/telepon5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/website5"
+                    android:fontFamily="@font/minou"
+                    android:text="Telepon: (022)7317058" />
+
+                <TextView
+                    android:id="@+id/hotline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/telepon5"
+                    android:fontFamily="@font/minou"
+                    android:text="Telepon: 081220444445" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:minHeight="100dp"
+            app:cardCornerRadius="20dp"
+            app:contentPadding="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/organization6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/minou"
+                    android:maxLines="1"
+                    android:text="BPJS Kesehatan Soreang"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/website6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/organization6"
+                    android:fontFamily="@font/minou"
+                    android:maxLines="1"
+                    android:text="Alamat: Jl. Terusan Alfathu No.6, Soreang, Kab. Bandung" />
+
+                <TextView
+                    android:id="@+id/telepon6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/website6"
+                    android:fontFamily="@font/minou"
+                    android:text="Telepon: (022)88886276" />
+
+                <TextView
+                    android:id="@+id/hotline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/telepon6"
+                    android:fontFamily="@font/minou"
+                    android:text="Telepon: 08112001504" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

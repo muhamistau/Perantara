@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="16dp"
+    tools:context=".ChapterThree6Fragment">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="24dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/cardtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/minou"
+                android:text="Dokter akan melakukan pemeriksaan untuk memperjelas kondisi payudara pasien sehingga dapat dilakukan penanganan yang tepat. Ikuti prosedur pemeriksaan yang disarankan oleh dokter."
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardtext"
+                android:layout_alignParentStart="true"
+                android:contentDescription="@string/desc_eti"
+                android:padding="16dp"
+                android:src="@drawable/hal11_1" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>

@@ -16,13 +16,14 @@
         android:id="@+id/worm_dots_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="3dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp"
         app:dotsColor="@android:color/white"
         app:dotsCornerRadius="8dp"
-        app:dotsSize="16dp"
-        app:dotsSpacing="4dp"
+        app:dotsSize="12dp"
+        app:dotsSpacing="3dp"
         app:dotsStrokeWidth="2dp" />
 
     <ImageView

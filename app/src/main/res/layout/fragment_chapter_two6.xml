@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="16dp"
+    tools:context=".ChapterTwo6Fragment">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/gambar_1"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/desc_eti"
+                    android:padding="8dp"
+                    android:src="@drawable/hal5_1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/header_text_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/minou"
+                        android:gravity="bottom"
+                        android:text="Raba payudara kiri dengan tangan kanan dan sebaliknya"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:fontFamily="@font/minou"
+                        android:gravity="top"
+                        android:text="Gunakan buku jari dari ketiga jari tengah. Raba secara lembut dengan gerakan searah jarum jam dan lakukan secara menyeuruh"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_below="@id/line1"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/gambar_2"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/desc_eti"
+                    android:padding="8dp"
+                    android:src="@drawable/hal5_2" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/header_text_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/minou"
+                        android:gravity="bottom"
+                        android:text="Baringkan tubuh dengan punggung diganjal"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="top"
+                        android:layout_weight="3"
+                        android:fontFamily="@font/minou"
+                        android:text="Kembali raba dan rasakan payudara seperti yang dilakukan pada tahap selanjutnya"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_below="@id/line2"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/gambar_3"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/desc_eti"
+                    android:padding="8dp"
+                    android:src="@drawable/hal5_3" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/header_text_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/minou"
+                        android:gravity="center_vertical"
+                        android:text="Pencet setiap puting dengan lembut"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>

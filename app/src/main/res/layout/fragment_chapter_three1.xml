@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/minou"
-                android:text="@string/chapter_3_placeholder_text"
+                android:text="Kita harus waspada banget ya Dok dengan penyakit kanker. Saya sering mendengar berbagai informasi tentang kanker payudara, yang belum tentu benar, misalnya: katanya pukulan keras pada payudara atau iritasi yang terus menerus dari BH dapat menyebabkan kanker,\nPadahal itu salah kan Dok..."
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
@@ -35,7 +35,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_below="@id/cardtext"
                 android:contentDescription="@string/desc_eti"
-                android:src="@drawable/chapter_two_1" />
+                android:src="@drawable/hal8_1" />
 
         </RelativeLayout>
 

@@ -13,6 +13,9 @@ public class ContactActivity extends AppCompatActivity {
     CardView card1;
     CardView card2;
     CardView card3;
+    CardView card4;
+    CardView card5;
+    CardView card6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,9 @@ public class ContactActivity extends AppCompatActivity {
         card1 = (CardView) findViewById(R.id.card1);
         card2 = (CardView) findViewById(R.id.card2);
         card3 = (CardView) findViewById(R.id.card3);
+        card4 = (CardView) findViewById(R.id.card4);
+        card5 = (CardView) findViewById(R.id.card5);
+        card6 = (CardView) findViewById(R.id.card6);
 
         card1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +47,27 @@ public class ContactActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intentCall("0224230240");
+            }
+        });
+
+        card4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intentCall("0222005892");
+            }
+        });
+
+        card5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intentCall("0227317058");
+            }
+        });
+
+        card6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intentCall("02288886276");
             }
         });
     }

@@ -116,6 +116,7 @@ public class StoryActivity extends AppCompatActivity {
                                 // Set The Prev and Next button visibility
                                 viewPagerPrev.setVisibility(View.GONE);
                                 viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
                                 break;
                             case 1:
                                 // Fill with code to start audio for Fragment 1
@@ -123,13 +124,18 @@ public class StoryActivity extends AppCompatActivity {
                                 startDialog(R.raw.perkenalan_eti);
 
                                 // Set The Prev and Next button visibility
+                                viewPagerNext.setVisibility(View.VISIBLE);
                                 viewPagerPrev.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
                                 break;
                             case 2:
 
                                 // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
                                 releaseMediaPlayer();
                                 startDialog(R.raw.chapter_1_drajat);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
                                 break;
                             case 3:
                                 // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
@@ -138,6 +144,7 @@ public class StoryActivity extends AppCompatActivity {
 
                                 // Set The Prev and Next button visibility
                                 viewPagerNext.setVisibility(View.VISIBLE);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
                                 finishButton.setVisibility(View.GONE);
                                 break;
                             default:
@@ -145,6 +152,7 @@ public class StoryActivity extends AppCompatActivity {
                                 releaseMediaPlayer();
 
                                 // Set The Prev and Next button visibility
+                                viewPagerPrev.setVisibility(View.VISIBLE);
                                 viewPagerNext.setVisibility(View.GONE);
                                 finishButton.setVisibility(View.VISIBLE);
 
@@ -210,6 +218,7 @@ public class StoryActivity extends AppCompatActivity {
                                 // Set The Prev and Next button visibility
                                 viewPagerPrev.setVisibility(View.GONE);
                                 viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
                                 break;
                             case 1:
                                 // Fill with code to start audio for Fragment 1
@@ -218,17 +227,63 @@ public class StoryActivity extends AppCompatActivity {
 
                                 // Set The Prev and Next button visibility
                                 viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
                                 break;
                             case 2:
                                 // Fill with code to end Fragment 2 Audio and start audio for Fragment 3
                                 releaseMediaPlayer();
                                 startDialog(R.raw.chapter_2_ahyani);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
                                 break;
 
                             case 3:
                                 releaseMediaPlayer();
+                                startDialog(R.raw.ch1_3);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
 
+                            case 4:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch1_4);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 5:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch1_5);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 6:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch1_678);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 7:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch1_9);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 8:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch1_10);
                                 // Set The Prev and Next button visibility
+                                viewPagerPrev.setVisibility(View.VISIBLE);
                                 viewPagerNext.setVisibility(View.VISIBLE);
                                 finishButton.setVisibility(View.GONE);
                                 break;
@@ -238,6 +293,7 @@ public class StoryActivity extends AppCompatActivity {
                                 releaseMediaPlayer();
 
                                 // Set The Prev and Next button visibility
+                                viewPagerPrev.setVisibility(View.VISIBLE);
                                 viewPagerNext.setVisibility(View.GONE);
                                 finishButton.setVisibility(View.VISIBLE);
                                 break;
@@ -263,10 +319,84 @@ public class StoryActivity extends AppCompatActivity {
                         switch (position) {
                             case 0:
                                 // Fill with code to start audio for Fragment 1
+                                releaseMediaPlayer();
                                 viewPagerPrev.setVisibility(View.GONE);
                                 break;
 
                             case 1:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch3_1);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 2:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch3_2);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 3:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch3_3);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 4:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch3_4);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 5:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch3_5);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 6:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch3_6);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 7:
+                                startDialog(R.raw.ch3_7);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 8:
+                                releaseMediaPlayer();
+
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 9:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch3_9);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 10:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch3_10);
                                 viewPagerPrev.setVisibility(View.VISIBLE);
                                 viewPagerNext.setVisibility(View.VISIBLE);
                                 finishButton.setVisibility(View.GONE);
@@ -299,23 +429,47 @@ public class StoryActivity extends AppCompatActivity {
                         switch (position) {
                             case 0:
                                 // Fill with code to start audio for Fragment 1
+                                releaseMediaPlayer();
                                 viewPagerPrev.setVisibility(View.GONE);
                                 break;
+
                             case 1:
                                 // Fill with code to end Fragment 1 Audio and start audio for Fragment 2
                                 releaseMediaPlayer();
-                                startDialog(R.raw.chapter_4_1);
+                                startDialog(R.raw.ch4_1);
                                 viewPagerPrev.setVisibility(View.VISIBLE);
-                                break;
-                            case 2:
-                                releaseMediaPlayer();
-                                startDialog(R.raw.chapter_4_2);
                                 viewPagerNext.setVisibility(View.VISIBLE);
                                 finishButton.setVisibility(View.GONE);
                                 break;
+
+                            case 2:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch4_2);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 3:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch4_3);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 4:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch4_4);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
                             default:
                                 // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
                                 releaseMediaPlayer();
+                                viewPagerPrev.setVisibility(View.VISIBLE);
                                 viewPagerNext.setVisibility(View.GONE);
                                 finishButton.setVisibility(View.VISIBLE);
                                 break;
@@ -330,8 +484,6 @@ public class StoryActivity extends AppCompatActivity {
                 break;
         }
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

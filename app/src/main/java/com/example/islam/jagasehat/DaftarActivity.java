@@ -56,7 +56,7 @@ public class DaftarActivity extends AppCompatActivity {
 
         if (daftarFirstRun) {
             TapTargetView.showFor(DaftarActivity.this,
-                    TapTarget.forView(findViewById(R.id.entry1), "Tap disini untuk membaca Bagian 1")
+                    TapTarget.forView(findViewById(R.id.entry1), "Ketuk disini untuk membaca Bagian 1")
                             .outerCircleColor(R.color.colorPrimary)
                             .transparentTarget(true)
                             .textColor(R.color.white)

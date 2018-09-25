@@ -61,6 +61,7 @@
                 android:id="@+id/line2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_below="@id/line1">
 
                 <TextView
@@ -80,6 +81,26 @@
                     android:textAlignment="textEnd" />
 
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/gambar_hal_4_1"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/desc_eti"
+                android:src="@drawable/hal4_1" />
+
+            <TextView
+                android:id="@+id/cardtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/minou"
+                android:paddingBottom="24dp"
+                android:text="@string/hal4_1"
+                android:textAlignment="center"
+                android:textSize="20sp" />
 
         </RelativeLayout>
 
