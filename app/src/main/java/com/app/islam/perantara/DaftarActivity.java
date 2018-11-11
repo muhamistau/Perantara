@@ -2,12 +2,18 @@ package com.app.islam.perantara;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetView;
@@ -15,10 +21,15 @@ import com.getkeepsafe.taptargetview.TapTargetView;
 public class DaftarActivity extends AppCompatActivity {
 
     static final int HAS_FINISHED_VALUE = 1;
+    Dialog achievementDialog;
     boolean chapterOneFinished;
     boolean chapterTwoFinished;
     boolean chapterThreeFinished;
     boolean chapterFourFinished;
+    Boolean isChapterOneDone;
+    Boolean isChapterTwoDone;
+    Boolean isChapterThreeDone;
+    Boolean isChapterFourDone;
     CardView entry1;
     CardView entry2;
     CardView entry3;
@@ -32,11 +43,12 @@ public class DaftarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_daftar);
 
         // Defining the corresponding CardView
-        entry1 = (CardView) findViewById(R.id.entry1);
-        entry2 = (CardView) findViewById(R.id.entry2);
-        entry3 = (CardView) findViewById(R.id.entry3);
-        entry4 = (CardView) findViewById(R.id.entry4);
-        shareButton = (CardView) findViewById(R.id.share_button);
+        achievementDialog = new Dialog(this);
+        entry1 = findViewById(R.id.entry1);
+        entry2 = findViewById(R.id.entry2);
+        entry3 = findViewById(R.id.entry3);
+        entry4 = findViewById(R.id.entry4);
+        shareButton = findViewById(R.id.share_button);
 
         shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,16 +86,16 @@ public class DaftarActivity extends AppCompatActivity {
         }
 
         // Checking if the chapter has ever been completed before
-        Boolean isChapterOneDone = getSharedPreferences("PREFERENCE1", MODE_PRIVATE)
+        isChapterOneDone = getSharedPreferences("PREFERENCE1", MODE_PRIVATE)
                 .getBoolean("isChapterOneDone", false);
 
-        Boolean isChapterTwoDone = getSharedPreferences("PREFERENCE2", MODE_PRIVATE)
+        isChapterTwoDone = getSharedPreferences("PREFERENCE2", MODE_PRIVATE)
                 .getBoolean("isChapterTwoDone", false);
 
-        Boolean isChapterThreeDone = getSharedPreferences("PREFERENCE3", MODE_PRIVATE)
+        isChapterThreeDone = getSharedPreferences("PREFERENCE3", MODE_PRIVATE)
                 .getBoolean("isChapterThreeDone", false);
 
-        Boolean isChapterFourDone = getSharedPreferences("PREFERENCE4", MODE_PRIVATE)
+        isChapterFourDone = getSharedPreferences("PREFERENCE4", MODE_PRIVATE)
                 .getBoolean("isChapterFourDone", false);
 
         // If the chapter already completed change the color to green at the start
@@ -121,6 +133,23 @@ public class DaftarActivity extends AppCompatActivity {
         getSharedPreferences("PREFERENCE_DAFTAR", MODE_PRIVATE).edit()
                 .putBoolean("daftarFirstRun", false).apply();
 
+    }
+
+    public void showPopup() {
+        TextView txtclose;
+        Button btnFollow;
+        achievementDialog.setContentView(R.layout.custompopup);
+        txtclose = (TextView) achievementDialog.findViewById(R.id.txtclose);
+//        txtclose.setText("M");
+        btnFollow = (Button) achievementDialog.findViewById(R.id.btnfollow);
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                achievementDialog.dismiss();
+            }
+        });
+        achievementDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        achievementDialog.show();
     }
 
     public void cerita1(View view) {
@@ -177,25 +206,25 @@ public class DaftarActivity extends AppCompatActivity {
 
                 if (whichChapterDone == 1) { // If the finished chapter is chapter 1
                     chapterOneFinished = true;
-                    entry1 = (CardView) findViewById(R.id.entry1);
+                    entry1 = findViewById(R.id.entry1);
                     getSharedPreferences("PREFERENCE1", MODE_PRIVATE).edit()
                             .putBoolean("isChapterOneDone", chapterOneFinished).apply();
                     entry1.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
                 } else if (whichChapterDone == 2) { // If the finished chapter is chapter 2
                     chapterTwoFinished = true;
-                    entry2 = (CardView) findViewById(R.id.entry2);
+                    entry2 = findViewById(R.id.entry2);
                     getSharedPreferences("PREFERENCE2", MODE_PRIVATE).edit()
                             .putBoolean("isChapterTwoDone", chapterTwoFinished).apply();
                     entry2.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
                 } else if (whichChapterDone == 3) { // If the finished chapter is chapter 3
                     chapterThreeFinished = true;
-                    entry3 = (CardView) findViewById(R.id.entry3);
+                    entry3 = findViewById(R.id.entry3);
                     getSharedPreferences("PREFERENCE3", MODE_PRIVATE).edit()
                             .putBoolean("isChapterThreeDone", chapterThreeFinished).apply();
                     entry3.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
                 } else if (whichChapterDone == 4) { // If the finished chapter is chapter 3
                     chapterFourFinished = true;
-                    entry4 = (CardView) findViewById(R.id.entry4);
+                    entry4 = findViewById(R.id.entry4);
                     getSharedPreferences("PREFERENCE4", MODE_PRIVATE).edit()
                             .putBoolean("isChapterFourDone", chapterFourFinished).apply();
                     entry4.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
@@ -208,5 +237,21 @@ public class DaftarActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (isChapterOneDone && isChapterTwoDone
+                && isChapterThreeDone && isChapterFourDone) {
+            getSharedPreferences("PREFERENCEAWARD", MODE_PRIVATE).edit()
+                    .putBoolean("isDone", true).apply();
+        }
+
+        if (getSharedPreferences("PREFERENCEAWARD", MODE_PRIVATE)
+                .getBoolean("isDone", false)) {
+            Toast.makeText(DaftarActivity.this, "On Resume", Toast.LENGTH_SHORT).show();
+            showPopup();
+        }
     }
 }
