@@ -5,6 +5,18 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.app.islam.perantara.chapter3.ChapterThree10Fragment;
+import com.app.islam.perantara.chapter3.ChapterThree1Fragment;
+import com.app.islam.perantara.chapter3.ChapterThree2Fragment;
+import com.app.islam.perantara.chapter3.ChapterThree3Fragment;
+import com.app.islam.perantara.chapter3.ChapterThree4Fragment;
+import com.app.islam.perantara.chapter3.ChapterThree5Fragment;
+import com.app.islam.perantara.chapter3.ChapterThree6Fragment;
+import com.app.islam.perantara.chapter3.ChapterThree7Fragment;
+import com.app.islam.perantara.chapter3.ChapterThree8Fragment;
+import com.app.islam.perantara.chapter3.ChapterThree9Fragment;
+import com.app.islam.perantara.chapter3.ChapterThreeDoneFragment;
+
 public class ChapterThreePagerAdapter extends FragmentPagerAdapter {
 
     private final int PAGE_COUNT = 12; // Defining how many page in this chapter for the Viewpager

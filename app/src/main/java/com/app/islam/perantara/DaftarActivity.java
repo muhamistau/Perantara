@@ -31,7 +31,7 @@ public class DaftarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar);
 
-        // Defining the coresponding CardView
+        // Defining the corresponding CardView
         entry1 = (CardView) findViewById(R.id.entry1);
         entry2 = (CardView) findViewById(R.id.entry2);
         entry3 = (CardView) findViewById(R.id.entry3);

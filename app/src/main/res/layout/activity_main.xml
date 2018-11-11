@@ -5,13 +5,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    android:padding="16dp"
+    android:padding="0dp"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingStart="130dp"
+        android:paddingTop="100dp"
+        android:paddingEnd="100dp"
+        android:paddingBottom="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/perantara_welcome" />
+
+    <TextView
+        android:id="@+id/textLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ventura_edding"
+        android:gravity="center_horizontal"
+        android:paddingTop="16dp"
+        android:text="@string/app_name"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="48sp" />
+
+    <TextView
+        android:id="@+id/textLogo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textLogo"
+        android:fontFamily="@font/minou"
+        android:gravity="center_horizontal"
+        android:text="@string/subtitle"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:padding="16dp"
         android:orientation="vertical">
 
         <Button
@@ -37,6 +72,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/ventura_edding"
                 android:text="Daftar Isi"
+                android:textColor="@android:color/black"
                 android:textSize="24sp" />
 
         </android.support.v7.widget.CardView>

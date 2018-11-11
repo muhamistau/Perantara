@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:padding="16dp"
-    tools:context=".ChapterOne2Fragment">
+    tools:context=".chapter1.ChapterOne2Fragment">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -15,7 +15,9 @@
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="24dp">
 
-        <RelativeLayout
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp">
@@ -33,21 +35,19 @@
                 android:id="@+id/cardtext2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/cardtext"
                 android:fontFamily="@font/minou"
                 android:text="@string/pengenalan_drajat2"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
             <ImageView
-                android:layout_width="250dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/cardtext2"
                 android:layout_centerHorizontal="true"
                 android:contentDescription="@string/desc_dr_drajat"
                 android:src="@drawable/perkenalan_drajat" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </android.support.v7.widget.CardView>
 

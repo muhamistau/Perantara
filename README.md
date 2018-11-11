@@ -1,6 +1,9 @@
 # Perantara
 Final project for Object Oriented programming II Course <br/>
 and IRL Project with Mr. Erick Paulus <br/>
+
+Perantara is an Educational App based on breast cancer Educational E-book with the same name.
+This app 
 DevPaq team
 - Paquita Putri Ramadhani
 - Muhammad Islam Taufikurahman

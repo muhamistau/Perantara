@@ -63,14 +63,14 @@ public class StoryActivity extends AppCompatActivity {
         final Boolean storyFirstRun = getSharedPreferences("PREFERENCE_STORY", MODE_PRIVATE)
                 .getBoolean("storyFirstRun", true);
 
-        viewPagerNext = (ImageView) findViewById(R.id.view_pager_next);
-        viewPagerPrev = (ImageView) findViewById(R.id.view_pager_prev);
-        finishButton = (ImageView) findViewById(R.id.finish_chapter);
+        viewPagerNext = findViewById(R.id.view_pager_next);
+        viewPagerPrev = findViewById(R.id.view_pager_prev);
+        finishButton = findViewById(R.id.finish_chapter);
 
         viewPagerPrev.setVisibility(View.GONE);
 
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        WormDotsIndicator wormDotsIndicator = (WormDotsIndicator) findViewById(R.id.worm_dots_indicator);
+        viewPager = findViewById(R.id.view_pager);
+        WormDotsIndicator wormDotsIndicator = findViewById(R.id.worm_dots_indicator);
 
         chapterNumber = Integer.parseInt(getIntent().getStringExtra("chapterNumber"));
         ChapterOnePagerAdapter chapterOnePagerAdapter;
@@ -257,7 +257,8 @@ public class StoryActivity extends AppCompatActivity {
 
                             case 5:
                                 releaseMediaPlayer();
-                                startDialog(R.raw.ch1_5);
+                                // TODO: re-record this line!!
+//                                startDialog(R.raw.ch1_5);
                                 viewPagerNext.setVisibility(View.VISIBLE);
                                 viewPagerPrev.setVisibility(View.VISIBLE);
                                 finishButton.setVisibility(View.GONE);
@@ -403,6 +404,7 @@ public class StoryActivity extends AppCompatActivity {
                                 break;
 
                             default:
+                                releaseMediaPlayer();
                                 // Fill with code to end Fragment 3 Audio and start audio for Fragment 4
                                 viewPagerNext.setVisibility(View.GONE);
                                 finishButton.setVisibility(View.VISIBLE);
@@ -498,12 +500,12 @@ public class StoryActivity extends AppCompatActivity {
     }
 
     public void viewPagerNext(View view) {
-        viewPagerNext = (ImageView) findViewById(R.id.view_pager_next);
+        viewPagerNext = findViewById(R.id.view_pager_next);
         viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
     }
 
     public void viewPagerPrev(View view) {
-        viewPagerPrev = (ImageView) findViewById(R.id.view_pager_prev);
+        viewPagerPrev = findViewById(R.id.view_pager_prev);
         viewPager.setCurrentItem(viewPager.getCurrentItem() - 1, true);
     }
 
@@ -540,7 +542,7 @@ public class StoryActivity extends AppCompatActivity {
     private void releaseMediaPlayer() {
         // If the media player is not null, then it may be currenly palying sound
         if (mediaPlayer != null) {
-            // Regardles of the current state of the media player, release its resources because we no longer need it.
+            // Regardless of the current state of the media player, release its resources because we no longer need it.
             mediaPlayer.stop();
             mediaPlayer.release();
 

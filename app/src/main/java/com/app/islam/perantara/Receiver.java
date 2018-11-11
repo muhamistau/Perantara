@@ -24,10 +24,10 @@ public class Receiver extends BroadcastReceiver {
         PendingIntent pi = PendingIntent.getActivity(context, reqCode, intent, 0);
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("Kembali dan selesaikan JagaSehat")
-                .setContentText("Anda belum menyelesaikan Aplikasi JagaSehat, Ayo kembali dan selesaikan!")
+                .setContentTitle("Kembali dan selesaikan Perantara")
+                .setContentText("Anda belum menyelesaikan Aplikasi Perantara, Ayo kembali dan selesaikan!")
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("Anda belum menyelesaikan Aplikasi JagaSehat, Ayo kembali dan selesaikan!"));
+                        .bigText("Anda belum menyelesaikan Aplikasi Perantara, Ayo kembali dan selesaikan!"));
 
         mBuilder.setContentIntent(pi);
         mBuilder.setDefaults(Notification.DEFAULT_SOUND);

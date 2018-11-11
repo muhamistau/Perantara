@@ -2,8 +2,8 @@ package com.app.islam.perantara;
 
 public class User {
 
-    private int umur;
-    private String jk, pendidikan, pekerjaan, email;
+    public int umur;
+    public String jk, pendidikan, pekerjaan, email;
 
     public User() {
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:padding="16dp"
-    tools:context=".ChapterFourDoneFragment">
+    tools:context=".chapter4.ChapterFourDoneFragment">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
