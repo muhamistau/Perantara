@@ -35,17 +35,15 @@
                 android:id="@+id/cardtext2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/cardtext"
                 android:fontFamily="@font/minou"
                 android:text="@string/pengenalan_ahyani2"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
             <ImageView
-                android:layout_width="250dp"
+                android:layout_width="wrap_content"
+                android:padding="16dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/cardtext2"
-                android:layout_centerHorizontal="true"
                 android:contentDescription="@string/desc_dr_ahyani"
                 android:src="@drawable/perkenalan_ahyani" />
 

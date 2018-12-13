@@ -41,7 +41,8 @@
                 android:textSize="20sp" />
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="16dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:contentDescription="@string/desc_dr_drajat"
