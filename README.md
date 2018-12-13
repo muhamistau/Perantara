@@ -14,7 +14,7 @@ Voice Actor
 - Hilya Tsaniya Ismet as Dr. Ahyani
 
 <br/>
-![Poster](https://user-images.githubusercontent.com/22696952/49941777-0d29b280-ff16-11e8-8b0a-338e316d5942.jpg)
+[Poster](https://user-images.githubusercontent.com/22696952/49941777-0d29b280-ff16-11e8-8b0a-338e316d5942.jpg)
 
 ## Third Party Projects used in this project
 ### Material View Pager Dots Indicator <br/>
