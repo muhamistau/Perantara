@@ -2,11 +2,11 @@
 Final project for Object Oriented programming II Course <br/>
 and IRL Project with Mr. Erick Paulus <br/>
 
-Perantara is an Educational App based on breast cancer Educational E-book with the same name.
-This app 
+Perantara is an Educational App focused on breast cancer Educational E-book with the same name. <br/>
 DevPaq team
 - Paquita Putri Ramadhani
 - Muhammad Islam Taufikurahman
+<br/>
 
 Voice Actor
 - Vega Savera Yuana as Eti
