@@ -139,9 +139,9 @@ public class DaftarActivity extends AppCompatActivity {
         TextView txtclose;
         Button btnFollow;
         achievementDialog.setContentView(R.layout.custompopup);
-        txtclose = (TextView) achievementDialog.findViewById(R.id.txtclose);
+        txtclose = achievementDialog.findViewById(R.id.txtclose);
 //        txtclose.setText("M");
-        btnFollow = (Button) achievementDialog.findViewById(R.id.btnfollow);
+        btnFollow = achievementDialog.findViewById(R.id.btnfollow);
         txtclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,7 +153,7 @@ public class DaftarActivity extends AppCompatActivity {
     }
 
     public void cerita1(View view) {
-        // Funtion that handle the click at Chapter 1 CardView
+        // Function that handle the click at Chapter 1 CardView
         Intent intent = new Intent(DaftarActivity.this, StoryActivity.class);
         intent.putExtra("chapterNumber", "1");
         startActivityForResult(intent, HAS_FINISHED_VALUE);
@@ -161,7 +161,7 @@ public class DaftarActivity extends AppCompatActivity {
     }
 
     public void cerita2(View view) {
-        // Funtion that handle the click at Chapter 2 CardView
+        // Function that handle the click at Chapter 2 CardView
         Intent intent = new Intent(DaftarActivity.this, StoryActivity.class);
         intent.putExtra("chapterNumber", "2");
         startActivityForResult(intent, HAS_FINISHED_VALUE);
@@ -169,7 +169,7 @@ public class DaftarActivity extends AppCompatActivity {
     }
 
     public void cerita3(View view) {
-        // Funtion that handle the click at Chapter 3 CardView
+        // Function that handle the click at Chapter 3 CardView
         Intent intent = new Intent(DaftarActivity.this, StoryActivity.class);
         intent.putExtra("chapterNumber", "3");
         startActivityForResult(intent, HAS_FINISHED_VALUE);
@@ -178,7 +178,7 @@ public class DaftarActivity extends AppCompatActivity {
     }
 
     public void cerita4(View view) {
-        // Funtion that handle the click at Chapter 4 CardView
+        // Function that handle the click at Chapter 4 CardView
         Intent intent = new Intent(DaftarActivity.this, StoryActivity.class);
         intent.putExtra("chapterNumber", "4");
         startActivityForResult(intent, HAS_FINISHED_VALUE);
@@ -187,7 +187,7 @@ public class DaftarActivity extends AppCompatActivity {
     }
 
     public void kontak(View view) {
-        // Funtion that handle the click at Contact CardView
+        // Function that handle the click at Contact CardView
         Intent intent = new Intent(DaftarActivity.this, ContactActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
