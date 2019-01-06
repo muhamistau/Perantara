@@ -1,9 +1,6 @@
 package com.app.islam.perantara;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 
 import com.app.islam.perantara.chapter3.ChapterThree10Fragment;
 import com.app.islam.perantara.chapter3.ChapterThree1Fragment;
@@ -16,6 +13,10 @@ import com.app.islam.perantara.chapter3.ChapterThree7Fragment;
 import com.app.islam.perantara.chapter3.ChapterThree8Fragment;
 import com.app.islam.perantara.chapter3.ChapterThree9Fragment;
 import com.app.islam.perantara.chapter3.ChapterThreeDoneFragment;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 public class ChapterThreePagerAdapter extends FragmentPagerAdapter {
 

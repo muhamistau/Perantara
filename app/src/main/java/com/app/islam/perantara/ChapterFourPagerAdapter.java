@@ -1,15 +1,16 @@
 package com.app.islam.perantara;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 
 import com.app.islam.perantara.chapter4.ChapterFour1Fragment;
 import com.app.islam.perantara.chapter4.ChapterFour3Fragment;
 import com.app.islam.perantara.chapter4.ChapterFour4Fragment;
 import com.app.islam.perantara.chapter4.ChapterFour5Fragment;
 import com.app.islam.perantara.chapter4.ChapterFourDoneFragment;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 public class ChapterFourPagerAdapter extends FragmentPagerAdapter {
 

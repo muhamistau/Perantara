@@ -2,12 +2,13 @@ package com.app.islam.perantara;
 
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 
 /**
@@ -25,7 +26,7 @@ public class ChapterWelcomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chapter_welcome, container, false);
-        TextView title = (TextView) view.findViewById(R.id.textCenter);
+        TextView title = view.findViewById(R.id.textCenter);
 
         int chapterNumber = Integer.parseInt(getActivity().getIntent().getStringExtra("chapterNumber"));
         switch (chapterNumber) {

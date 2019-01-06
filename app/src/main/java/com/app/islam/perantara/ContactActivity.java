@@ -3,10 +3,11 @@ package com.app.islam.perantara;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class ContactActivity extends AppCompatActivity {
 
@@ -22,12 +23,12 @@ public class ContactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
 
-        card1 = (CardView) findViewById(R.id.card1);
-        card2 = (CardView) findViewById(R.id.card2);
-        card3 = (CardView) findViewById(R.id.card3);
-        card4 = (CardView) findViewById(R.id.card4);
-        card5 = (CardView) findViewById(R.id.card5);
-        card6 = (CardView) findViewById(R.id.card6);
+        card1 = findViewById(R.id.card1);
+        card2 = findViewById(R.id.card2);
+        card3 = findViewById(R.id.card3);
+        card4 = findViewById(R.id.card4);
+        card5 = findViewById(R.id.card5);
+        card6 = findViewById(R.id.card6);
 
         card1.setOnClickListener(new View.OnClickListener() {
             @Override

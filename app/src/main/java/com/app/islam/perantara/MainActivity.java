@@ -3,18 +3,19 @@ package com.app.islam.perantara;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageView;
+
+import com.google.android.material.snackbar.Snackbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button muteButton;
+    ImageView muteButton, shareButton;
     CardView nextButton;
-    TextView status;
     AudioManager audioManager;
 
     @Override
@@ -23,27 +24,47 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         muteButton = findViewById(R.id.mute_button);
+        shareButton = findViewById(R.id.share_button);
         nextButton = findViewById(R.id.next_button);
-        status = findViewById(R.id.text_status);
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+
+        if (audioManager.getStreamVolume(AudioManager.STREAM_MUSIC) == 0) {
+            muteButton.setImageResource(R.drawable.baseline_volume_off_white_48);
+        } else {
+            muteButton.setImageResource(R.drawable.baseline_volume_up_white_48);
+        }
 
         muteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)) {
                     case 0:
-                        muteButton.setText("Mute Media Sound");
-                        audioManager.setStreamVolume(audioManager.STREAM_MUSIC, 10, 0);
+                        muteButton.setImageResource(R.drawable.baseline_volume_up_white_48);
+                        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 10, 0);
                         audioManager.setStreamMute(AudioManager.STREAM_MUSIC, false);
-                        status.setText("" + audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+                        Snackbar.make(findViewById(R.id.main_activity), "Suara dinyalakan",
+                                Snackbar.LENGTH_SHORT).show();
                         break;
 
                     default:
-                        muteButton.setText("Unmute Media Sound");
+                        muteButton.setImageResource(R.drawable.baseline_volume_off_white_48);
                         audioManager.setStreamMute(AudioManager.STREAM_MUSIC, true);
-                        status.setText("" + audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+                        Snackbar.make(findViewById(R.id.main_activity), "Suara dimatikan",
+                                Snackbar.LENGTH_SHORT).show();
                         break;
                 }
+            }
+        });
+
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent share = new Intent(Intent.ACTION_SEND);
+                share.setType("text/plain");
+
+                share.putExtra(Intent.EXTRA_SUBJECT, "Saya menggunakan JagaSehat");
+                share.putExtra(Intent.EXTRA_TEXT, "Saya menggunakan aplikasi JagaSehat, aplikasi edukasi mengenai Kanker Payudara");
+                startActivity(Intent.createChooser(share, "Bagikan"));
             }
         });
 

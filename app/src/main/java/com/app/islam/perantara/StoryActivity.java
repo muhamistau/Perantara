@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,6 +13,9 @@ import android.widget.ImageView;
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetView;
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class StoryActivity extends AppCompatActivity {
 
@@ -97,6 +98,8 @@ public class StoryActivity extends AppCompatActivity {
                 break;
         }
 
+//        TabLayout tabLayout = findViewById(R.id.tab_layout);
+//        tabLayout.setupWithViewPager(viewPager, true);
         wormDotsIndicator.setViewPager(viewPager);
 
         switch (chapterNumber) {

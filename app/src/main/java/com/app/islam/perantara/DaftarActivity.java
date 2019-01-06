@@ -5,18 +5,15 @@ import android.app.AlarmManager;
 import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class DaftarActivity extends AppCompatActivity {
 
@@ -48,19 +45,7 @@ public class DaftarActivity extends AppCompatActivity {
         entry2 = findViewById(R.id.entry2);
         entry3 = findViewById(R.id.entry3);
         entry4 = findViewById(R.id.entry4);
-        shareButton = findViewById(R.id.share_button);
-
-        shareButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent share = new Intent(Intent.ACTION_SEND);
-                share.setType("text/plain");
-
-                share.putExtra(Intent.EXTRA_SUBJECT, "Saya menggunakan JagaSehat");
-                share.putExtra(Intent.EXTRA_TEXT, "Saya menggunakan aplikasi JagaSehat, aplikasi edukasi mengenai Kanker Payudara");
-                startActivity(Intent.createChooser(share, "Bagikan"));
-            }
-        });
+        shareButton = findViewById(R.id.achievement_button);
 
         // Checking first run or not
         Boolean daftarFirstRun = getSharedPreferences("PREFERENCE_DAFTAR", MODE_PRIVATE)
@@ -135,23 +120,6 @@ public class DaftarActivity extends AppCompatActivity {
 
     }
 
-    public void showPopup() {
-        TextView txtclose;
-        Button btnFollow;
-        achievementDialog.setContentView(R.layout.custompopup);
-        txtclose = achievementDialog.findViewById(R.id.txtclose);
-//        txtclose.setText("M");
-        btnFollow = achievementDialog.findViewById(R.id.btnfollow);
-        txtclose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                achievementDialog.dismiss();
-            }
-        });
-        achievementDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        achievementDialog.show();
-    }
-
     public void cerita1(View view) {
         // Function that handle the click at Chapter 1 CardView
         Intent intent = new Intent(DaftarActivity.this, StoryActivity.class);
@@ -193,7 +161,12 @@ public class DaftarActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
     }
 
+    public void penghargaan(View view) {
+
+    }
+
     // Function that checking the return result after calling startActivityForResult() function
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -251,7 +224,7 @@ public class DaftarActivity extends AppCompatActivity {
         if (getSharedPreferences("PREFERENCEAWARD", MODE_PRIVATE)
                 .getBoolean("isDone", false)) {
             Toast.makeText(DaftarActivity.this, "On Resume", Toast.LENGTH_SHORT).show();
-            showPopup();
+            
         }
     }
 }
