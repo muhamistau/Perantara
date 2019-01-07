@@ -71,9 +71,19 @@ public class MainActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, DaftarActivity.class);
-                startActivity(i);
-                overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+                Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                        .getBoolean("isFirstRun", true);
+
+                if (isFirstRun) {
+                    // show FormActivity
+                    Intent intent = new Intent(MainActivity.this, FormActivity.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+                } else {
+                    Intent i = new Intent(MainActivity.this, DaftarActivity.class);
+                    startActivity(i);
+                    overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+                }
             }
         });
     }

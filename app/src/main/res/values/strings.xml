@@ -25,7 +25,7 @@
         <item>Lainnya</item>
     </string-array>
 
-    <string name="subtitle">Aplikasi Edukasi Kesehatan Masyarakat Jawa Barat</string>
+    <string name="subtitle">Aplikasi Edukasi Kanker Payudara\nuntuk Masyarakat Jawa Barat</string>
     <string name="hint_umur">Berapakah Umur anda?</string>
     <string name="hint_email">Apakah Email Anda?</string>
     <string name="hint_jk">Jenis Kelamin Anda?</string>
@@ -72,7 +72,6 @@
     <string name="rasa_n_nlihat_n_nraba">raSA  LIhat  RAba</string>
     <string name="bagian_3_nmengapa_perlu_konsultasi_ke_dokter_nselesai">Bagian 3\nMengapa Perlu Konsultasi Ke Dokter?\nSelesai</string>
 
-    <string name="chapter_3_placeholder_text">Uh oh... Bagian ini masih dalam tahap pembangunan</string>
     <string name="dukungan_tidak_hanya_dari_suami_dan_keluarga_bisa_juga_dari_sahabat_atau_orang_yang_peduli_pada_ibu">Dukungan tidak hanya dari suami dan keluarga, bisa juga dari sahabat atau orang yang peduli pada Ibu.</string>
     <string name="selain_suami_anak_anak_atau_keluarga_besar_kira_kira_siapa_lagi_yang_bisa_membantu_ibu_nibu_bisa_menghubungi_mereka_dan_sampaikan_harapan_ibu">Selain suami, anak-anak, atau keluarga besar, kira-kira siapa lagi yang bisa membantu Ibu?</string>
     <string name="penting_untuk_diingat">Penting untuk diingat!</string>
@@ -81,8 +80,6 @@
     <string name="prev_arrow">Prev arrow</string>
     <string name="bagikan_aplikasi_ini">Bagikan Aplikasi ini</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hal4_1">Pertama-tama, coba ibu berdiri di depan cermin dengan kedua lengan ke bawah.</string>
     <string name="hal4_2">Kemudian, coba ubah posisi tangan Ibu menjadi bertolak pinggang</string>
     <string name="hal4_3">Lalu sekali lagi ubah posisi tangan ibu manjadi diangkat keatas. Perhatikan perubahan payudara.</string>

@@ -32,28 +32,28 @@ public class FormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
 
-        umurInputLayout = (TextInputLayout) findViewById(R.id.umurTextInputlayout);
-        umur = (TextInputEditText) findViewById(R.id.umurEditText);
+        umurInputLayout = findViewById(R.id.umurTextInputlayout);
+        umur = findViewById(R.id.umurEditText);
 
-        emailInputLayout = (TextInputLayout) findViewById(R.id.emailTextInputlayout);
-        email = (TextInputEditText) findViewById(R.id.emailEditText);
+        emailInputLayout = findViewById(R.id.emailTextInputlayout);
+        email = findViewById(R.id.emailEditText);
 
-        spinJK = (Spinner) findViewById(R.id.spinnerJK);
+        spinJK = findViewById(R.id.spinnerJK);
         ArrayAdapter<CharSequence> adapterJK = ArrayAdapter.createFromResource(this, R.array.jk_array, R.layout.spinner_item);
         adapterJK.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinJK.setAdapter(adapterJK);
 
-        spinPendidikan = (Spinner) findViewById(R.id.spinnerPendidikan);
+        spinPendidikan = findViewById(R.id.spinnerPendidikan);
         ArrayAdapter<CharSequence> adapterPendidikan = ArrayAdapter.createFromResource(this, R.array.pendidikan_array, R.layout.spinner_item);
         adapterPendidikan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinPendidikan.setAdapter(adapterPendidikan);
 
-        spinPekerjaan = (Spinner) findViewById(R.id.spinnerPekerjaan);
+        spinPekerjaan = findViewById(R.id.spinnerPekerjaan);
         ArrayAdapter<CharSequence> adapterPekerjaan = ArrayAdapter.createFromResource(this, R.array.pekerjaan_array, R.layout.spinner_item);
         adapterPekerjaan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinPekerjaan.setAdapter(adapterPekerjaan);
 
-        kirim = (CardView) findViewById(R.id.cardkirim);
+        kirim = findViewById(R.id.cardkirim);
 
         kirim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +80,7 @@ public class FormActivity extends AppCompatActivity {
 
         } else {
 
-            if (isValidEmail(email.getText().toString()) == true || TextUtils.isEmpty(email.getText()) == true) {
+            if (isValidEmail(email.getText().toString()) || TextUtils.isEmpty(email.getText())) {
 
                 mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -103,7 +103,7 @@ public class FormActivity extends AppCompatActivity {
                 getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
                         .putBoolean("isFirstRun", false).apply();
 
-                Intent intent = new Intent(FormActivity.this, MainActivity.class);
+                Intent intent = new Intent(FormActivity.this, DaftarActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
                 finish();

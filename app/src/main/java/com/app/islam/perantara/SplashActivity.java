@@ -10,17 +10,20 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
-                .getBoolean("isFirstRun", true);
+//        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+//                .getBoolean("isFirstRun", true);
+//
+//        if (isFirstRun) {
+//            // show FormActivity
+//            Intent intent = new Intent(SplashActivity.this, FormActivity.class);
+//            startActivity(intent);
+//            finish();
+//        } else {
+//            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//            finish();
+//        }
+        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+        finish();
 
-        if (isFirstRun) {
-            // show FormActivity
-            Intent intent = new Intent(SplashActivity.this, FormActivity.class);
-            startActivity(intent);
-            finish();
-        } else {
-            startActivity(new Intent(SplashActivity.this, MainActivity.class));
-            finish();
-        }
     }
 }

@@ -2,12 +2,10 @@ package com.app.islam.perantara;
 
 import android.app.Activity;
 import android.app.AlarmManager;
-import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetView;
@@ -18,7 +16,6 @@ import androidx.cardview.widget.CardView;
 public class DaftarActivity extends AppCompatActivity {
 
     static final int HAS_FINISHED_VALUE = 1;
-    Dialog achievementDialog;
     boolean chapterOneFinished;
     boolean chapterTwoFinished;
     boolean chapterThreeFinished;
@@ -31,7 +28,7 @@ public class DaftarActivity extends AppCompatActivity {
     CardView entry2;
     CardView entry3;
     CardView entry4;
-    CardView shareButton;
+    CardView achievementButton;
     int REQUEST_CODE = 1;
 
     @Override
@@ -40,12 +37,19 @@ public class DaftarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_daftar);
 
         // Defining the corresponding CardView
-        achievementDialog = new Dialog(this);
         entry1 = findViewById(R.id.entry1);
         entry2 = findViewById(R.id.entry2);
         entry3 = findViewById(R.id.entry3);
         entry4 = findViewById(R.id.entry4);
-        shareButton = findViewById(R.id.achievement_button);
+        achievementButton = findViewById(R.id.achievement_button);
+        achievementButton.setVisibility(View.GONE);
+
+        achievementButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                penghargaan(v);
+            }
+        });
 
         // Checking first run or not
         Boolean daftarFirstRun = getSharedPreferences("PREFERENCE_DAFTAR", MODE_PRIVATE)
@@ -114,6 +118,11 @@ public class DaftarActivity extends AppCompatActivity {
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), AlarmManager.INTERVAL_DAY * 7, pendingIntent);
         }
 
+        if (isChapterOneDone && isChapterTwoDone
+                && isChapterThreeDone && isChapterFourDone) {
+            achievementButton.setVisibility(View.VISIBLE);
+        }
+
         // Remember to uncomment this line
         getSharedPreferences("PREFERENCE_DAFTAR", MODE_PRIVATE).edit()
                 .putBoolean("daftarFirstRun", false).apply();
@@ -162,7 +171,10 @@ public class DaftarActivity extends AppCompatActivity {
     }
 
     public void penghargaan(View view) {
-
+        // Function that handle the click at Achievement CardView
+        Intent intent = new Intent(DaftarActivity.this, AchievementActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
     }
 
     // Function that checking the return result after calling startActivityForResult() function
@@ -180,29 +192,46 @@ public class DaftarActivity extends AppCompatActivity {
                 if (whichChapterDone == 1) { // If the finished chapter is chapter 1
                     chapterOneFinished = true;
                     entry1 = findViewById(R.id.entry1);
-                    getSharedPreferences("PREFERENCE1", MODE_PRIVATE).edit()
-                            .putBoolean("isChapterOneDone", chapterOneFinished).apply();
+                    cekProgres();
                     entry1.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
                 } else if (whichChapterDone == 2) { // If the finished chapter is chapter 2
                     chapterTwoFinished = true;
                     entry2 = findViewById(R.id.entry2);
-                    getSharedPreferences("PREFERENCE2", MODE_PRIVATE).edit()
-                            .putBoolean("isChapterTwoDone", chapterTwoFinished).apply();
+                    cekProgres();
                     entry2.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
                 } else if (whichChapterDone == 3) { // If the finished chapter is chapter 3
                     chapterThreeFinished = true;
                     entry3 = findViewById(R.id.entry3);
-                    getSharedPreferences("PREFERENCE3", MODE_PRIVATE).edit()
-                            .putBoolean("isChapterThreeDone", chapterThreeFinished).apply();
+                    cekProgres();
                     entry3.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
                 } else if (whichChapterDone == 4) { // If the finished chapter is chapter 3
                     chapterFourFinished = true;
                     entry4 = findViewById(R.id.entry4);
-                    getSharedPreferences("PREFERENCE4", MODE_PRIVATE).edit()
-                            .putBoolean("isChapterFourDone", chapterFourFinished).apply();
+                    cekProgres();
                     entry4.setCardBackgroundColor(getResources().getColor(R.color.chapterIsDone));
                 }
             }
+        }
+    }
+
+    public void cekProgres() {
+        if (getSharedPreferences("PREFERENCEAWARD", MODE_PRIVATE)
+                .getBoolean("isDone", false)) {
+
+            achievementButton.setVisibility(View.VISIBLE);
+
+            if (getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                    .getBoolean("pertamaSelesai", true)) {
+
+                getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                        .putBoolean("pertamaSelesai", false).apply();
+
+                Intent intent = new Intent(DaftarActivity.this,
+                        AchievementActivity.class);
+                startActivity(intent);
+
+            }
+
         }
     }
 
@@ -212,19 +241,4 @@ public class DaftarActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (isChapterOneDone && isChapterTwoDone
-                && isChapterThreeDone && isChapterFourDone) {
-            getSharedPreferences("PREFERENCEAWARD", MODE_PRIVATE).edit()
-                    .putBoolean("isDone", true).apply();
-        }
-
-        if (getSharedPreferences("PREFERENCEAWARD", MODE_PRIVATE)
-                .getBoolean("isDone", false)) {
-            Toast.makeText(DaftarActivity.this, "On Resume", Toast.LENGTH_SHORT).show();
-            
-        }
-    }
 }

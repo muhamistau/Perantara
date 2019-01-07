@@ -98,8 +98,6 @@ public class StoryActivity extends AppCompatActivity {
                 break;
         }
 
-//        TabLayout tabLayout = findViewById(R.id.tab_layout);
-//        tabLayout.setupWithViewPager(viewPager, true);
         wormDotsIndicator.setViewPager(viewPager);
 
         switch (chapterNumber) {
@@ -566,6 +564,11 @@ public class StoryActivity extends AppCompatActivity {
                 resultIntent.putExtra("finish", "1");  // Giving the empty Intent a value to pass, indicating chapter 1 is done
                 setResult(Activity.RESULT_OK, resultIntent); // Setting result
 
+                getSharedPreferences("PREFERENCE1", MODE_PRIVATE).edit()
+                        .putBoolean("isChapterOneDone", true).apply();
+
+                cekProgres();
+
                 finish(); // Close the Activity
                 overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down); // Override transition animation
                 break;
@@ -574,6 +577,11 @@ public class StoryActivity extends AppCompatActivity {
                 resultIntent = new Intent(); // Creating an empty Intent
                 resultIntent.putExtra("finish", "2");  // Giving the empty Intent a value to pass, indicating chapter 1 is done
                 setResult(Activity.RESULT_OK, resultIntent); // Setting result
+
+                getSharedPreferences("PREFERENCE2", MODE_PRIVATE).edit()
+                        .putBoolean("isChapterTwoDone", true).apply();
+
+                cekProgres();
 
                 finish(); // Close the Activity
                 overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down); // Override transition animation
@@ -584,6 +592,11 @@ public class StoryActivity extends AppCompatActivity {
                 resultIntent.putExtra("finish", "3");  // Giving the empty Intent a value to pass, indicating chapter 1 is done
                 setResult(Activity.RESULT_OK, resultIntent); // Setting result
 
+                getSharedPreferences("PREFERENCE3", MODE_PRIVATE).edit()
+                        .putBoolean("isChapterThreeDone", true).apply();
+
+                cekProgres();
+
                 finish(); // Close the Activity
                 overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down); // Override transition animation
                 break;
@@ -593,10 +606,30 @@ public class StoryActivity extends AppCompatActivity {
                 resultIntent.putExtra("finish", "4");  // Giving the empty Intent a value to pass, indicating chapter 1 is done
                 setResult(Activity.RESULT_OK, resultIntent); // Setting result
 
+                getSharedPreferences("PREFERENCE4", MODE_PRIVATE).edit()
+                        .putBoolean("isChapterFourDone", true).apply();
+
+                cekProgres();
+
                 finish(); // Close the Activity
                 overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down); // Override transition animation
                 break;
 
+        }
+    }
+
+    public void cekProgres() {
+
+        if (getSharedPreferences("PREFERENCE1", MODE_PRIVATE)
+                .getBoolean("isChapterOneDone", false) &&
+                getSharedPreferences("PREFERENCE2", MODE_PRIVATE)
+                        .getBoolean("isChapterTwoDone", false) &&
+                getSharedPreferences("PREFERENCE3", MODE_PRIVATE)
+                        .getBoolean("isChapterThreeDone", false) &&
+                getSharedPreferences("PREFERENCE4", MODE_PRIVATE)
+                        .getBoolean("isChapterFourDone", false)) {
+            getSharedPreferences("PREFERENCEAWARD", MODE_PRIVATE).edit()
+                    .putBoolean("isDone", true).apply();
         }
     }
 
