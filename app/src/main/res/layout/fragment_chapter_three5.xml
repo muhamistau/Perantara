@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:padding="16dp"
-    tools:context=".chapter3.ChapterThree5Fragment">
+    tools:context=".chapter1.ChapterOne1Fragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -15,29 +15,32 @@
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="24dp">
 
-        <RelativeLayout
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp">
 
             <TextView
+                android:layout_height="0dp"
                 android:id="@+id/cardtext"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
                 android:fontFamily="@font/minou"
                 android:text="Jadi begitu menemukan ada kelainan pada payudara, harus segera periksa ya Dok. Terus, apa saja prosedur pemeriksaan payudara?"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
             <ImageView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/cardtext"
-                android:layout_alignParentEnd="true"
-                android:contentDescription="@string/desc_eti"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:contentDescription="@drawable/hal8_1"
                 android:src="@drawable/hal11_2" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 

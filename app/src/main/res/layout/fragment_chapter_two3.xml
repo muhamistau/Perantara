@@ -6,103 +6,40 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:padding="16dp"
-    tools:context=".chapter2.ChapterTwo3Fragment">
+    tools:context=".chapter1.ChapterOne1Fragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="50dp"
         app:cardBackgroundColor="@android:color/white"
-        app:cardCornerRadius="24dp"
-        app:contentPadding="16dp">
+        app:cardCornerRadius="24dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-
-            <LinearLayout
-                android:id="@+id/line1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/ventura_edding"
-                    android:text="@string/sadari"
-                    android:textSize="40sp" />
-
-                <TextView
-                    android:id="@+id/dengan"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/minou"
-                    android:text="@string/dengan"
-                    android:textAlignment="center"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/salira"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/ventura_edding"
-                    android:text="@string/salira"
-                    android:textAlignment="textEnd"
-                    android:textSize="40sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/line2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_below="@id/line1">
-
-                <TextView
-                    android:id="@+id/akronim1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/minou"
-                    android:text="@string/periksa_n_npayudara_n_nsendiri_t" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/minou"
-                    android:text="@string/rasa_n_nlihat_n_nraba"
-                    android:textAlignment="textEnd" />
-
-            </LinearLayout>
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <ImageView
-                android:id="@+id/gambar_hal_4_1"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:layout_weight="2"
                 android:contentDescription="@string/desc_eti"
                 android:src="@drawable/hal4_1" />
 
             <TextView
                 android:id="@+id/cardtext"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:fontFamily="@font/minou"
-                android:paddingBottom="24dp"
                 android:text="@string/hal4_1"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 

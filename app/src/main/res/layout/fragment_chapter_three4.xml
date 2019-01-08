@@ -72,7 +72,7 @@
                     android:fontFamily="@font/minou"
                     android:text="Haid pertama pada usia muda\n(kurang dari 12 th)"
                     android:textAlignment="center"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -81,7 +81,7 @@
                     android:fontFamily="@font/minou"
                     android:text="Melahirkan anak pertama pada usia tua\n(lebih dari 30 th)"
                     android:textAlignment="center"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -90,7 +90,7 @@
                     android:fontFamily="@font/minou"
                     android:text="Menopouse pada usia yang lebih tua\n(di atas 50 th)"
                     android:textAlignment="center"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
@@ -136,7 +136,7 @@
                     android:fontFamily="@font/minou"
                     android:text="Pemakaian kontrasepsi oral dalam waktu lama\n(di atas 7 th)"
                     android:textAlignment="center"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -145,7 +145,7 @@
                     android:fontFamily="@font/minou"
                     android:text="Mandul atau tidak pernah melahirkan"
                     android:textAlignment="center"
-                    android:textSize="12sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -154,7 +154,7 @@
                     android:fontFamily="@font/minou"
                     android:text="Tidak pernah menyusui anak"
                     android:textAlignment="center"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
             </LinearLayout>
 

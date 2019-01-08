@@ -15,166 +15,168 @@
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="24dp">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/ventura_edding"
-                android:text="SEMAKIN CEPAT DIKETAHUI,\nSEMAKIN CEPAT DITANGANI"
-                android:textAlignment="center"
-                android:textSize="32sp" />
+            android:layout_gravity="center">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="3"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/minou"
-                    android:text="•"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp" />
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/minou"
-                    android:text="Saat ini, pengobatan di bidang kedokteran sudah semakin maju sehingga sudah semakin banyak kasus kanker payudara yang tertangani dengan baik."
-                    android:textSize="16sp" />
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/ventura_edding"
+                    android:text="SEMAKIN CEPAT DIKETAHUI,\nSEMAKIN CEPAT DITANGANI"
+                    android:textAlignment="center"
+                    android:textSize="32sp" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/minou"
-                    android:text="•"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp" />
-
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/minou"
-                    android:text="Semakin cepat penyakit diketahui dan diobati, semakin tinggi tingkat kesembuhannya"
-                    android:textSize="16sp" />
+                    android:orientation="horizontal">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/minou"
+                        android:text="•"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="3"
-                android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/minou"
+                        android:text="Saat ini, pengobatan di bidang kedokteran sudah semakin maju sehingga sudah semakin banyak kasus kanker payudara yang tertangani dengan baik."
+                        android:textSize="16sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/minou"
-                    android:text="•"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp" />
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/minou"
-                    android:text="Pasien yang terlambat memeriksa diri ke dokter memiliki ukuran tumor yang lebih besar daripada pasien yang segera memeriksakan dirinya ke dokter. Ukuran tumor yang lebih besar akan memperumit pengobatan."
-                    android:textSize="16sp" />
+                    android:orientation="horizontal">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/minou"
+                        android:text="•"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
-                android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/minou"
+                        android:text="Semakin cepat penyakit diketahui dan diobati, semakin tinggi tingkat kesembuhannya"
+                        android:textSize="16sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/minou"
-                    android:text="•"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp" />
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/minou"
-                    android:text="hampir seluruh wanita dengan Stadium 0 akan memiliki hidup yang normal."
-                    android:textSize="16sp" />
+                    android:orientation="horizontal">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/minou"
+                        android:text="•"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
-                android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/minou"
+                        android:text="Pasien yang terlambat memeriksa diri ke dokter memiliki ukuran tumor yang lebih besar daripada pasien yang segera memeriksakan dirinya ke dokter. Ukuran tumor yang lebih besar akan memperumit pengobatan."
+                        android:textSize="16sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/minou"
-                    android:text="•"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp" />
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/minou"
-                    android:text="Wanita dengan Stadium 1 (kurang dari 1 cm) bisa memiliki keberhasilan pengobatan sebesar 95%."
-                    android:textSize="16sp" />
+                    android:orientation="horizontal">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/minou"
+                        android:text="•"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
-                android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/minou"
+                        android:text="hampir seluruh wanita dengan Stadium 0 akan memiliki hidup yang normal."
+                        android:textSize="16sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/minou"
-                    android:text="•"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp" />
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/minou"
-                    android:text="Bahkan, wanita dengan Stadium II bisa memiliki keberhasilan pengobatan mencapai 70%"
-                    android:textSize="16sp" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/minou"
+                        android:text="•"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/minou"
+                        android:text="Wanita dengan Stadium 1 (kurang dari 1 cm) bisa memiliki keberhasilan pengobatan sebesar 95%."
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/minou"
+                        android:text="•"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/minou"
+                        android:text="Bahkan, wanita dengan Stadium II bisa memiliki keberhasilan pengobatan mencapai 70%"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </ScrollView>
 
     </androidx.cardview.widget.CardView>
 

@@ -65,7 +65,7 @@
                     android:fontFamily="@font/minou"
                     android:text="Terpapar radiasi saat payudara tumbuh."
                     android:textAlignment="center"
-                    android:textSize="16sp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -74,7 +74,7 @@
                     android:fontFamily="@font/minou"
                     android:text="Keturunan, memiliki gen pembawa kanker payudara."
                     android:textAlignment="center"
-                    android:textSize="16sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -113,7 +113,7 @@
                     android:fontFamily="@font/minou"
                     android:text="Pernah memiliki tumor pada payudara. Pemakaian hormon yang berlebihan."
                     android:textAlignment="center"
-                    android:textSize="16sp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="0dp"

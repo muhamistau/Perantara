@@ -29,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_margin="8dp"
+            android:padding="8dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:selectableItemBackground"
@@ -50,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_margin="8dp"
+            android:padding="8dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:selectableItemBackground"
@@ -71,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_margin="8dp"
+            android:padding="8dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:selectableItemBackground"
@@ -93,6 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_margin="8dp"
+            android:padding="8dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:selectableItemBackground"
@@ -138,29 +142,6 @@
                     android:textSize="24sp" />
 
             </androidx.cardview.widget.CardView>
-
-            <!--<android.support.v7.widget.CardView-->
-            <!--android:id="@+id/share_button"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="75dp"-->
-            <!--android:layout_margin="8dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:clickable="true"-->
-            <!--android:focusable="true"-->
-            <!--android:foreground="?android:selectableItemBackground"-->
-            <!--android:onClick="kontak"-->
-            <!--app:cardCornerRadius="20dp">-->
-
-            <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:fontFamily="@font/ventura_edding"-->
-            <!--android:text="@string/bagikan_aplikasi_ini"-->
-            <!--android:textAlignment="center"-->
-            <!--android:textSize="24sp" />-->
-
-            <!--</android.support.v7.widget.CardView>-->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/achievement_button"
