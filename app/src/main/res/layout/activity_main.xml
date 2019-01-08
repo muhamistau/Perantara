@@ -61,7 +61,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/mute_card"
                 android:layout_width="0dp"
-                android:layout_height="75dp"
+                android:layout_height="50dp"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackgroundBorderless"
@@ -78,7 +78,7 @@
                     android:clickable="true"
                     android:contentDescription="volume_button"
                     android:focusable="true"
-                    android:padding="16dp"
+                    android:padding="8dp"
                     android:src="@drawable/baseline_volume_up_white_48"
                     android:tint="@android:color/black" />
 
@@ -87,7 +87,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/share_card"
                 android:layout_width="0dp"
-                android:layout_height="75dp"
+                android:layout_height="50dp"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackgroundBorderless"
@@ -105,7 +105,7 @@
                     android:clickable="true"
                     android:contentDescription="share"
                     android:focusable="true"
-                    android:padding="16dp"
+                    android:padding="8dp"
                     android:src="@drawable/baseline_share_white_48dp"
                     android:tint="@android:color/black" />
 
@@ -116,7 +116,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/next_button"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="50dp"
             android:layout_margin="8dp"
             android:clickable="true"
             android:focusable="true"
@@ -138,7 +138,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/tentang"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="50dp"
             android:layout_margin="8dp"
             android:clickable="true"
             android:focusable="true"

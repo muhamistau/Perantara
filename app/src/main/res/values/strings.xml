@@ -25,7 +25,7 @@
         <item>Lainnya</item>
     </string-array>
 
-    <string name="subtitle">Aplikasi Edukasi Kanker Payudara\nuntuk Masyarakat Jawa Barat</string>
+    <string name="subtitle">Aplikasi Edukasi Kanker Payudara untuk\nMasyarakat Jawa Barat</string>
     <string name="hint_umur">Berapakah Umur anda?</string>
     <string name="hint_email">Apakah Email Anda?</string>
     <string name="hint_jk">Jenis Kelamin Anda?</string>
