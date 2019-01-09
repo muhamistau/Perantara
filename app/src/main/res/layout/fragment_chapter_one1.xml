@@ -29,9 +29,10 @@
                 android:fontFamily="@font/minou"
                 android:text="@string/pengenalan_eti"
                 android:textAlignment="center"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <ImageView
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/desc_eti"

@@ -122,7 +122,7 @@ public class StoryActivity extends AppCompatActivity {
                             case 1:
                                 // Fill with code to start audio for Fragment 1
                                 releaseMediaPlayer();
-                                startDialog(R.raw.perkenalan_eti);
+                                startDialog(R.raw.chap_1_line_1);
 
                                 // Set The Prev and Next button visibility
                                 viewPagerNext.setVisibility(View.VISIBLE);
@@ -266,7 +266,6 @@ public class StoryActivity extends AppCompatActivity {
 
                             case 6:
                                 releaseMediaPlayer();
-                                // TODO: re-record this line!!
                                 startDialog(R.raw.ch1_5);
                                 viewPagerNext.setVisibility(View.VISIBLE);
                                 viewPagerPrev.setVisibility(View.VISIBLE);
@@ -390,7 +389,7 @@ public class StoryActivity extends AppCompatActivity {
 
                             case 8:
                                 releaseMediaPlayer();
-
+                                startDialog(R.raw.chap_4_line_8);
                                 viewPagerPrev.setVisibility(View.VISIBLE);
                                 viewPagerNext.setVisibility(View.VISIBLE);
                                 finishButton.setVisibility(View.GONE);

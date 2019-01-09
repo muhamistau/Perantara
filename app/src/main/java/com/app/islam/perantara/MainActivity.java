@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plain");
 
-                share.putExtra(Intent.EXTRA_SUBJECT, "Saya menggunakan JagaSehat");
-                share.putExtra(Intent.EXTRA_TEXT, "Saya menggunakan aplikasi JagaSehat, aplikasi edukasi mengenai Kanker Payudara");
+                share.putExtra(Intent.EXTRA_SUBJECT, "Saya menggunakan Perantara");
+                share.putExtra(Intent.EXTRA_TEXT, "Saya menggunakan aplikasi Perantara, aplikasi edukasi mengenai Kanker Payudara");
                 startActivity(Intent.createChooser(share, "Bagikan"));
             }
         });

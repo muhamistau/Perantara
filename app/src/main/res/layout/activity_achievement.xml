@@ -5,46 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:padding="8dp"
     android:orientation="vertical"
     tools:context=".AchievementActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="16dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:orientation="horizontal"
-            android:padding="16dp">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/ic_launcher" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/ic_launcher" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/ic_launcher" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="5"
         android:layout_margin="8dp"
         app:cardCornerRadius="16dp">
 
@@ -56,12 +24,52 @@
 
             <TextView
                 android:layout_width="match_parent"
+                android:fontFamily="@font/ventura_edding"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Selamat"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="match_parent"
                 android:fontFamily="@font/minou"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Wah, Selamat. Anda telah menyelesaikan Aplikasi Perantara ini. Terima kasih telah menggunakan aplikasi edukasi ini. Ayo sebarkan aplikasi ini agar masyarakat lebih peka mengenai penyakit kanker payudara"
                 android:textSize="20sp" />
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/perkenalan_eti" />
+
         </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/share_card2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:id="@+id/share_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="share"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/baseline_share_white_48dp"
+            android:tint="@android:color/black" />
 
     </androidx.cardview.widget.CardView>
 

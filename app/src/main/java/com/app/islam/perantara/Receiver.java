@@ -24,7 +24,7 @@ public class Receiver extends BroadcastReceiver {
         Intent intent = new Intent(context, SplashActivity.class);
         PendingIntent pi = PendingIntent.getActivity(context, reqCode, intent, 0);
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_stat_perantara)
                 .setContentTitle("Kembali dan selesaikan Perantara")
                 .setContentText("Anda belum menyelesaikan Aplikasi Perantara, Ayo kembali dan selesaikan!")
                 .setStyle(new NotificationCompat.BigTextStyle()

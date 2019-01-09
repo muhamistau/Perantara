@@ -27,15 +27,15 @@
 
     <string name="subtitle">Aplikasi Edukasi Kanker Payudara untuk\nMasyarakat Jawa Barat</string>
     <string name="hint_umur">Berapakah Umur anda?</string>
-    <string name="hint_email">Apakah Email Anda?</string>
+    <string name="hint_email">Apakah Email Anda? *Opsional</string>
     <string name="hint_jk">Jenis Kelamin Anda?</string>
     <string name="hint_pendidikan">Tingkat Pendidikan Anda?</string>
     <string name="hint_pekerjaan">Apakah Pekerjaan Anda?</string>
-    <string name="pengenalan_eti">\tApa kabar semua, saya Eti. Selamat datang di aplikasi JagaSehat, dengan aplikasi ini kalian bakal dapat banyak informasi tentang kesehatan payudara.</string>
+    <string name="pengenalan_eti">\tApa kabar semua, Perkenalkan saya Eti. Selamat datang di aplikasi Perantara, dengan aplikasi ini kalian bakal dapat banyak informasi tentang kesehatan payudara. Jadi simak-baik yah</string>
     <string name="pengenalan_drajat">dr. Drajat R Suardi, Sp.B (K) Onk., FICS</string>
     <string name="pengenalan_drajat2">\tDokter Drajat merupakan dokter spesialis bedah onkologi Rumah Sakit Hasan Sadikin (RSHS) Bandung. Beliau juga pernah menjabat sebagai PP Perhimpunan Onkologi Indonesia Periode 2010 s.d 2014</string>
     <string name="pengenalan_ahyani">dr. Ahyani Raksanagara, M.Kes</string>
-    <string name="pengenalan_ahyani2">\tDokter yang pernah terdiagnosis kanker payudara namun telah berhasil menjalani seluruh prodesur pengobatan sehingga mampu kembali beraktivitas secara normal. Saat ini Dokter Ahyani merupakan Kepala Dinas Kesehatan Kota Bandung</string>
+    <string name="pengenalan_ahyani2">\tSaat ini Dokter Ahyani merupakan Kepala Dinas Kesehatan Kota Bandung. Dokter yang pernah terdiagnosis kanker payudara namun telah berhasil menjalani seluruh prodesur pengobatan sehingga mampu kembali beraktivitas secara normal</string>
     <string name="umur_error">Umur harus diisi!</string>
     <string name="bagian_1_selesai">Bagian 1\nPengenalan Tokoh\nSelesai</string>
     <string name="bandung_cancer_society">Bandung Cancer Society</string>
