@@ -58,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/minou"
-                android:text="Selamat anda telah menyelesaikan Aplikasi Perantara ini"
+                android:text="Wah, Selamat. Anda telah menyelesaikan Aplikasi Perantara ini. Terima kasih telah menggunakan aplikasi edukasi ini. Ayo sebarkan aplikasi ini agar masyarakat lebih peka mengenai penyakit kanker payudara"
                 android:textSize="20sp" />
 
         </LinearLayout>

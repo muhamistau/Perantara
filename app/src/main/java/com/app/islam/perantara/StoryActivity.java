@@ -242,7 +242,7 @@ public class StoryActivity extends AppCompatActivity {
 
                             case 3:
                                 releaseMediaPlayer();
-                                startDialog(R.raw.ch1_3);
+//                                startDialog(R.raw.ch1_3);
                                 viewPagerNext.setVisibility(View.VISIBLE);
                                 viewPagerPrev.setVisibility(View.VISIBLE);
                                 finishButton.setVisibility(View.GONE);
@@ -250,7 +250,7 @@ public class StoryActivity extends AppCompatActivity {
 
                             case 4:
                                 releaseMediaPlayer();
-                                startDialog(R.raw.ch1_4);
+                                startDialog(R.raw.ch1_3);
                                 viewPagerNext.setVisibility(View.VISIBLE);
                                 viewPagerPrev.setVisibility(View.VISIBLE);
                                 finishButton.setVisibility(View.GONE);
@@ -258,8 +258,7 @@ public class StoryActivity extends AppCompatActivity {
 
                             case 5:
                                 releaseMediaPlayer();
-                                // TODO: re-record this line!!
-//                                startDialog(R.raw.ch1_5);
+                                startDialog(R.raw.ch1_4);
                                 viewPagerNext.setVisibility(View.VISIBLE);
                                 viewPagerPrev.setVisibility(View.VISIBLE);
                                 finishButton.setVisibility(View.GONE);
@@ -267,7 +266,8 @@ public class StoryActivity extends AppCompatActivity {
 
                             case 6:
                                 releaseMediaPlayer();
-                                startDialog(R.raw.ch1_678);
+                                // TODO: re-record this line!!
+                                startDialog(R.raw.ch1_5);
                                 viewPagerNext.setVisibility(View.VISIBLE);
                                 viewPagerPrev.setVisibility(View.VISIBLE);
                                 finishButton.setVisibility(View.GONE);
@@ -275,13 +275,21 @@ public class StoryActivity extends AppCompatActivity {
 
                             case 7:
                                 releaseMediaPlayer();
-                                startDialog(R.raw.ch1_9);
+                                startDialog(R.raw.ch1_678);
                                 viewPagerNext.setVisibility(View.VISIBLE);
                                 viewPagerPrev.setVisibility(View.VISIBLE);
                                 finishButton.setVisibility(View.GONE);
                                 break;
 
                             case 8:
+                                releaseMediaPlayer();
+                                startDialog(R.raw.ch1_9);
+                                viewPagerNext.setVisibility(View.VISIBLE);
+                                viewPagerPrev.setVisibility(View.VISIBLE);
+                                finishButton.setVisibility(View.GONE);
+                                break;
+
+                            case 9:
                                 releaseMediaPlayer();
                                 startDialog(R.raw.ch1_10);
                                 // Set The Prev and Next button visibility
