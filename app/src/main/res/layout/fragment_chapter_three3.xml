@@ -120,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/minou"
-                    android:text="Kebiasaaan yang tidak baik, misalnya: makan makanan cepat saji yang banyak mengandung lemak jenuh, minuman beralkohol, berat badan berlebihan."
+                    android:text="Kebiasaaan makan yang tidak baik, misalnya: makan makanan cepat saji yang banyak mengandung lemak jenuh, minuman beralkohol, berat badan berlebihan."
                     android:textAlignment="center"
                     android:textSize="12sp" />
 

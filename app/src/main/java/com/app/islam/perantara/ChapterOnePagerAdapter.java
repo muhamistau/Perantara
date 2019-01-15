@@ -7,6 +7,7 @@ import com.app.islam.perantara.chapter1.ChapterOne2Fragment;
 import com.app.islam.perantara.chapter1.ChapterOne3Fragment;
 import com.app.islam.perantara.chapter1.ChapterOneDoneFragment;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -23,6 +24,7 @@ public class ChapterOnePagerAdapter extends FragmentPagerAdapter {
     }
 
     // Defining which fragment at which page
+    @NonNull
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {

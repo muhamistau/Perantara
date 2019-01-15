@@ -21,8 +21,9 @@
             android:layout_gravity="center">
 
             <LinearLayout
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="16dp">
@@ -100,7 +101,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/minou"
-                        android:text="Pasien yang terlambat memeriksa diri ke dokter memiliki ukuran tumor yang lebih besar daripada pasien yang segera memeriksakan dirinya ke dokter. Ukuran tumor yang lebih besar akan memperumit pengobatan."
+                        android:text="Pasien yang terlambat memeriksakan diri ke dokter memiliki ukuran tumor yang lebih besar daripada pasien yang segera memeriksakan dirinya ke dokter. Ukuran tumor yang lebih besar akan memperumit pengobatan."
                         android:textSize="16sp" />
 
                 </LinearLayout>

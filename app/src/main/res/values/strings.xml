@@ -31,7 +31,7 @@
     <string name="hint_jk">Jenis Kelamin Anda?</string>
     <string name="hint_pendidikan">Tingkat Pendidikan Anda?</string>
     <string name="hint_pekerjaan">Apakah Pekerjaan Anda?</string>
-    <string name="pengenalan_eti">\tApa kabar semua, Perkenalkan saya Eti. Selamat datang di aplikasi Perantara, dengan aplikasi ini kalian bakal dapat banyak informasi tentang kesehatan payudara. Jadi simak-baik yah</string>
+    <string name="pengenalan_eti">\tApa kabar semua, Perkenalkan saya Eti. Selamat datang di aplikasi Perantara, dengan aplikasi ini kalian bakal dapat banyak informasi tentang kesehatan payudara. Jadi simak baik-baik yah</string>
     <string name="pengenalan_drajat">dr. Drajat R Suardi, Sp.B (K) Onk., FICS</string>
     <string name="pengenalan_drajat2">\tDokter Drajat merupakan dokter spesialis bedah onkologi Rumah Sakit Hasan Sadikin (RSHS) Bandung. Beliau juga pernah menjabat sebagai PP Perhimpunan Onkologi Indonesia Periode 2010 s.d 2014</string>
     <string name="pengenalan_ahyani">dr. Ahyani Raksanagara, M.Kes</string>
@@ -61,8 +61,8 @@
     <string name="desc_dr_ahyani">Dr. Ahyani</string>
     <string name="desc_finish_chapter_button">Finish Chapter Button</string>
 
-    <string name="chapter_two_bubble_1">Dokter Ahyani, beberapa teman saya yang merasakan ada benjolan di payudaranya, mereka cemas dan bertanya, \"ada apa dengan payudara saya? apakah benjolan ini bisa diobati?\". Bagaimana pengalaman dokter Ahyani saat itu?</string>
-    <string name="chapter_two_bubble_2">Begitu menyadari ada yang mencurigakan, saya segera periksa dan konsultasi ke dokter untuk memastikan apa masalahnya. Jadi, keputusan ibu untuk periksa ke dokter sudah Tepat dan kebanyakan benjolan yang terjadi pada payudara bukan kanker dan berhasil di tangani dengan baik.</string>
+    <string name="chapter_two_bubble_1">Dokter Ahyani, beberapa teman saya yang merasakan ada benjolan di payudaranya, mereka cemas dan bertanya, \"ada apa dengan payudara saya? apakah benjolan ini bisa diobati?\". Bagaimana pengalaman dokter Ahyani dalam mengatasi kecemasan seperti ini?</string>
+    <string name="chapter_two_bubble_2">Begitu menyadari ada yang mencurigakan, saya segera periksa dan konsultasi ke dokter untuk memastikan apa masalahnya. Jadi, keputusan ibu untuk periksa ke dokter sudah tepat dan kebanyakan benjolan yang terjadi pada payudara bukan kanker dan berhasil di tangani dengan baik.</string>
     <string name="bagian_2_selesai">Bagian 2\nAda Apa Dengan Payudara Saya?\nSelesai</string>
 
     <string name="sadari">SADARI</string>
@@ -72,7 +72,7 @@
     <string name="rasa_n_nlihat_n_nraba">raSA  LIhat  RAba</string>
     <string name="bagian_3_nmengapa_perlu_konsultasi_ke_dokter_nselesai">Bagian 3\nMengapa Perlu Konsultasi Ke Dokter?\nSelesai</string>
 
-    <string name="dukungan_tidak_hanya_dari_suami_dan_keluarga_bisa_juga_dari_sahabat_atau_orang_yang_peduli_pada_ibu">Dukungan tidak hanya dari suami dan keluarga, bisa juga dari sahabat atau orang yang peduli pada Ibu.</string>
+    <string name="dukungan_tidak_hanya_dari_suami_dan_keluarga_bisa_juga_dari_sahabat_atau_orang_yang_peduli_pada_ibu">Dukungan tidak hanya dari suami atau keluarga, bisa juga dari sahabat atau orang yang peduli dengan Ibu.</string>
     <string name="selain_suami_anak_anak_atau_keluarga_besar_kira_kira_siapa_lagi_yang_bisa_membantu_ibu_nibu_bisa_menghubungi_mereka_dan_sampaikan_harapan_ibu">Selain suami, anak-anak, atau keluarga besar, kira-kira siapa lagi yang bisa membantu Ibu?</string>
     <string name="penting_untuk_diingat">Penting untuk diingat!</string>
     <string name="bagian_4_nibu_tidak_sendirian_nselesai">Bagian 4\nIbu Tidak Sendirian\nSelesai</string>
@@ -83,5 +83,6 @@
     <string name="hal4_1">Pertama-tama, coba ibu berdiri di depan cermin dengan kedua lengan ke bawah.</string>
     <string name="hal4_2">Kemudian, coba ubah posisi tangan Ibu menjadi bertolak pinggang</string>
     <string name="hal4_3">Lalu sekali lagi ubah posisi tangan ibu manjadi diangkat keatas. Perhatikan perubahan payudara.</string>
+    <string name="achievement_congrats">Selamat... Anda sudah selesai membaca informasi dalam aplikasi Perantara ini. Terima kasih sudah menggunakan aplikasi ini dan mari kita sebarkan kepada saudara, teman, kenalan dan masyarakat luas agar semua orang lebih faham mengenai penyakit Kanker Payudara.</string>
 
 </resources>

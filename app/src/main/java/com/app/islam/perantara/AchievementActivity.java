@@ -1,18 +1,24 @@
 package com.app.islam.perantara;
 
 import android.content.Context;
-import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+
+import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+import androidx.viewpager.widget.ViewPager;
 
 public class AchievementActivity extends AppCompatActivity {
 
-    CardView shareButton;
+    ViewPager viewPager;
+    ImageView viewPagerNext;
+    ImageView viewPagerPrev;
+    ImageView finishButton;
+
     //Use MediaPlayer API and create an global variable for it
     private MediaPlayer mediaPlayer;
 
@@ -48,20 +54,70 @@ public class AchievementActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_achievement);
 
-        releaseMediaPlayer();
-        startDialog(R.raw.chap_achievements);
+//        releaseMediaPlayer();
+//        startDialog(R.raw.chap_achievements);
 
-        shareButton = findViewById(R.id.share_card2);
-        shareButton.setVisibility(View.GONE);
-        shareButton.setOnClickListener(new View.OnClickListener() {
+        viewPagerNext = findViewById(R.id.view_pager_next);
+        viewPagerPrev = findViewById(R.id.view_pager_prev);
+        finishButton = findViewById(R.id.finish_chapter);
+
+        finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent share = new Intent(Intent.ACTION_SEND);
-                share.setType("text/plain");
+                releaseMediaPlayer();
+                finish();
+                overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down);
+            }
+        });
 
-                share.putExtra(Intent.EXTRA_SUBJECT, "Saya telah menyelesaikan aplikasi Perantara");
-                share.putExtra(Intent.EXTRA_TEXT, "Saya telah menyelesaikan aplikasi Perantara, aplikasi edukasi mengenai Kanker Payudara. Ayo download Aplikasinya");
-                startActivity(Intent.createChooser(share, "Bagikan"));
+        viewPagerPrev.setVisibility(View.GONE);
+
+        viewPager = findViewById(R.id.view_pager);
+        WormDotsIndicator wormDotsIndicator = findViewById(R.id.worm_dots_indicator);
+
+        AchievementPagerAdapter achievementPagerAdapter =
+                new AchievementPagerAdapter(getSupportFragmentManager(), this);
+
+        viewPager.setAdapter(achievementPagerAdapter);
+
+        wormDotsIndicator.setViewPager(viewPager);
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        releaseMediaPlayer();
+                        startDialog(R.raw.chap_achievements);
+
+                        // Set The Prev and Next button visibility
+                        viewPagerPrev.setVisibility(View.GONE);
+                        viewPagerNext.setVisibility(View.VISIBLE);
+                        finishButton.setVisibility(View.GONE);
+                        break;
+
+                    default:
+                        releaseMediaPlayer();
+                        // TODO: New dialog recording
+//                        startDialog(R.raw.chap_achievements);
+
+                        // Set The Prev and Next button visibility
+                        viewPagerPrev.setVisibility(View.VISIBLE);
+                        viewPagerNext.setVisibility(View.GONE);
+                        finishButton.setVisibility(View.VISIBLE);
+
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
             }
         });
 
@@ -72,6 +128,16 @@ public class AchievementActivity extends AppCompatActivity {
         super.onBackPressed();
         releaseMediaPlayer();
         overridePendingTransition(R.anim.slide_out_down, R.anim.slide_in_down);
+    }
+
+    public void viewPagerNext(View view) {
+        viewPagerNext = findViewById(R.id.view_pager_next);
+        viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
+    }
+
+    public void viewPagerPrev(View view) {
+        viewPagerPrev = findViewById(R.id.view_pager_prev);
+        viewPager.setCurrentItem(viewPager.getCurrentItem() - 1, true);
     }
 
     public void startDialog(int id) {

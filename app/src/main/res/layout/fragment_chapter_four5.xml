@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cardtext"
                 android:fontFamily="@font/minou"
-                android:text="Selain memperoleh informasi yang tepat, ibu juga membutuhkan dukungan dan bantuan dari orang-orang terpercaya. Ibu tidak sendirian menghadapi kondisi ini. Ibu akan menemkan teman dan keluarga yang bersedia membantu."
+                android:text="Selain memperoleh informasi yang tepat, ibu juga membutuhkan dukungan dan bantuan dari orang-orang terpercaya. Ibu tidak sendirian menghadapi kondisi ini. Ibu akan menemukan teman dan keluarga yang bersedia membantu."
                 android:textAlignment="center"
                 android:textSize="20sp" />
 

@@ -135,33 +135,31 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!--<androidx.cardview.widget.CardView-->
-        <!--android:id="@+id/tentang"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:layout_margin="8dp"-->
-        <!--android:clickable="true"-->
-        <!--android:focusable="true"-->
-        <!--android:foreground="?android:selectableItemBackground"-->
-        <!--android:text="Daftar Chapter"-->
-        <!--app:cardCornerRadius="20dp">-->
-
-        <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:fontFamily="@font/ventura_edding"-->
-        <!--android:text="Tentang"-->
-        <!--android:textColor="@android:color/black"-->
-        <!--android:textSize="24sp" />-->
-
-        <!--</androidx.cardview.widget.CardView>-->
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_gravity="end"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="8dp"
             android:layout_height="50dp"
-            android:src="@drawable/logo_unpad" />
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/unpad_logo" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/vu_logo" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/kwf_logo" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
